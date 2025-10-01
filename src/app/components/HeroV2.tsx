@@ -28,7 +28,7 @@ export const HeroV2 = () => {
           </h1>
 
           <AnimatedElement element="p" delay={0.6} className="max-w-xs text-sm leading-snug tracking-tight text-slate-700 md:max-w-sm md:pr-4 md:text-base">
-            <strong className="font-semibold text-slate-900">Frontend-focused full stack developer.</strong> React & Next.js specialist.
+            <strong className="font-semibold text-slate-900">Backend-focused full stack developer.</strong> TypeScript & Next.js specialist.
           </AnimatedElement>
 
           <CallToActionButton />

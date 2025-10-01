@@ -11,7 +11,7 @@ export const ProjectsSection: React.FC = () => {
 
       <div className="pointer-events-none relative z-5 mix-blend-exclusion">
         <AnimatedText
-          text="Latest Projects"
+          text="Latest Projects "
           margin={300}
           once={true}
           className="inline-block text-4xl leading-9 tracking-tighter whitespace-nowrap text-white md:text-5xl md:leading-12 lg:text-6xl"

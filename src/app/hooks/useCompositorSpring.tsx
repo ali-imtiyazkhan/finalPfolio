@@ -8,7 +8,7 @@ export function useCompositorSpring(ref: RefObject<HTMLElement | null>, progress
     const el = ref.current
     if (!el) return
     el.style.opacity = "1"
-    /* Create a paused compositor animation ------------------- */
+ 
     const anim = el.animate(
       [
         {

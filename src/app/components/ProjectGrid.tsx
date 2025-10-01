@@ -77,7 +77,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#3B06D1"
           type="Movies Booking Website"
           progress={progress}
-          href={externalLinks.zeroCore}
+          href="https://github.com/ali-imtiyazkhan/moviesBooking"
           dataText="View on GitHub"
         />
         <AnimatedCard
@@ -89,6 +89,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#024EFC"
           type="E-com WebSite"
           progress={progress}
+          href={externalLinks.zeroCore}
           dataText="View Case Study"
         />
 
@@ -101,6 +102,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#DA961A"
           type="Chat App"
           progress={progress}
+          href="https://github.com/ali-imtiyazkhan/chat-app"
           dataText="View Case Study"
         />
         <AnimatedCard
@@ -112,6 +114,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#13739C"
           type="Blog WebSite"
           progress={progress}
+          href="https://blog-website-9qk3.vercel.app"
           dataText="Live Preview"
         />
       </div>

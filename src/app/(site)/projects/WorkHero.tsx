@@ -9,13 +9,13 @@ export const WorkHero: React.FC = () => {
             My Most
           </AnimatedElement>{" "}
           <br />
-          <AnimatedElement element="span" offsetPx={70} delay={0.5} fadeDirection="top" className="inline-block">
+          <AnimatedElement element="span" offsetPx={70} delay={0.4} fadeDirection="top" className="inline-block">
             Recent Work
           </AnimatedElement>
         </h1>
         <AnimatedElement
           element="p"
-          delay={0.6}
+          delay={0.5}
           className="max-w-xs text-center text-sm leading-tight tracking-tight text-slate-700 md:max-w-sm md:pr-4 md:text-base"
         >
           A collection of what I&apos;ve actually built - from open-source libraries like React Zero-UI to production apps. See Case Studies for more details.

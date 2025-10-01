@@ -88,12 +88,12 @@ export const ServicesSectionV2: React.FC = ({ className = "" }: { className?: st
       <div className="flex h-full flex-col gap-16 max-md:w-full md:[flex:2_0_0px]">
         <AnimatedH2>
           Engineering <br />
-          <span className="text-slate-500">Toolkit</span>
+          <span className="text-slate-700">Toolkit</span>
         </AnimatedH2>
 
         {/* Tech Stack */}
         <div className="w-full">
-          <Text size="base" className="mb-8">
+          <Text size="base" className="mb-8 hover:underline">
             My tech stack
           </Text>
 

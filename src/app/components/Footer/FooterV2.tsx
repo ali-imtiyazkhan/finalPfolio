@@ -40,7 +40,7 @@ export const FooterV2: React.FC = () => {
             <li className="flex flex-col gap-1 md:gap-2">
               <span className="text-gray-500">Email</span>
               <Link href="itmtiyaj.codes@gmail.com" className="w-fit text-sm transition-colors duration-200 hover:text-gray-300">
-                itmtiyaj.codes@gmail.com
+                imtiyaj.codes@gmail.com
               </Link>
             </li>
             <li className="flex flex-col gap-2">

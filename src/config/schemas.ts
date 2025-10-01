@@ -11,14 +11,14 @@ interface ProjectItem {
 
 const projectsData: ProjectItem[] = [
   {
-    name: "React Zero-UI",
+    name: "Movies Booking",
     url: externalLinks.zeroCore,
     date: "2025-06-01",
-    description: "Zero Re-Render State Library",
+    description: "Movies Booking website",
     isExternal: true,
   },
   {
-    name: "Bespoke Tint & PPF",
+    name: "Shopping ",
     url: SITE_SLUGS.projectLinks.bespoke,
     date: "2025-03-11",
     description: "Automotive Styling Website",
@@ -64,9 +64,9 @@ const projectsData: ProjectItem[] = [
 export const projectsSchema: WithContext<CollectionPage> = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Projects - Austin Serb",
+  name: "Projects - Imtiyaz",
   url: `${SITE_CONFIG.url}${SITE_SLUGS.projects}`,
-  about: "Projects and case studies by Austin Serb (Next.js, React, TypeScript).",
+  about: "Projects and case studies by Imityaz (Next.js, React, TypeScript).",
   mainEntity: {
     "@type": "ItemList",
     itemListOrder: "Descending",
@@ -140,7 +140,7 @@ const projectBreadcrumbSchema: WithContext<BreadcrumbList> = {
     {
       "@type": "Person",
       "@id": "https://serbyte.dev/#austin",
-      name: "Austin Serb",
+      name: "Imtiyaz Khan",
       url: SITE_CONFIG.url,
       jobTitle: "Full-Stack Engineer",
       image: { "@id": "https://serbyte.dev/#headshot" },
@@ -149,10 +149,10 @@ const projectBreadcrumbSchema: WithContext<BreadcrumbList> = {
       contactPoint: [
         {
           "@type": "ContactPoint",
-          contactType: "Hiring",
+          contactType: "Open to work",
           email: SITE_NAP.email,
-          areaServed: "US",
-          availableLanguage: ["en"],
+          areaServed: "india",
+          availableLanguage: ["en","Hin"],
         },
       ],
     },
@@ -166,7 +166,7 @@ const projectBreadcrumbSchema: WithContext<BreadcrumbList> = {
     {
       "@type": "WebSite",
       "@id": `${SITE_CONFIG.url}#website`,
-      name: "Austin Serb - Developer Portfolio",
+      name: "Imtiyaz Khan - Developer Portfolio",
       url: SITE_CONFIG.url,
       publisher: { "@id": `${SITE_CONFIG.url}#austin` },
       inLanguage: "en",

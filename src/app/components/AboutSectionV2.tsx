@@ -42,16 +42,13 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
           <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-slate-500">
             <p>
               <strong className="font-semibold text-slate-900">I build production systems and invent tools</strong> when the platform gets in the way. I created
-              <a href="https://github.com/react-zero-ui" target="_blank" rel="noopener">
-                {" "}
-                React Zero UI
-              </a>
-              . A ~350B micro-library that updates UI by flipping data-* attributes, eliminating React re-renders for UI state. This site runs on it.
+  
+              A Payment App  ,Blog Website , and a movie booking website .
             </p>
 
             <p>
               <strong className="font-semibold text-slate-900">I ship v1s in weeks and iterate in days</strong>. Leveraging tools server-first React, typed
-              APIs, background jobs, CI/CD, and observability. Small PRs, rapid feedback, no ceremony.
+              APIs, CI/CD, and observability. Small PRs, rapid feedback, no ceremony.
             </p>
             <p>
               <strong className="font-semibold text-slate-900">My core philosophy is simplicity</strong>. if complexity balloons, I delete it and design the

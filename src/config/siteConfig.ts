@@ -21,8 +21,8 @@ export const SITE_NAP = {
   addressLink: "https://www.google.com/maps/search/?api=1&query=serbyte+development",
   street: "12601 NE 124th ST",
   city: "Alwer,Jaipur",
-  state: "WA",
-  zipCode: "98034",
+  state: "Rajsthan",
+  zipCode: "301405",
   openingHours: [{ days: "Mon - Sat", hours: "8am - 6pm" }] as const,
   googleReviewLink: "https://g.page/r/CXHVs1ony_76EAI/review",
   profiles: {
@@ -54,7 +54,7 @@ export const SITE_SLUGS = {
 export const externalLinks = {
   vetsChoice: "https://github.com/ali-imtiyazkhan",
   zeroIconSprite: "https://github.com/ali-imtiyazkhan",
-  zeroCore: "https://github.com/ali-imtiyazkhan",
+  zeroCore: "https://movies-booking-web.vercel.app/",
   entitled: "https://github.com/ali-imtiyazkhan",
 } as const
 

@@ -77,7 +77,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#3B06D1"
           type="Movies Booking Website"
           progress={progress}
-          href="https://github.com/ali-imtiyazkhan/moviesBooking"
+          href="https://movies-booking-web.vercel.app/"
           dataText="View on GitHub"
         />
         <AnimatedCard

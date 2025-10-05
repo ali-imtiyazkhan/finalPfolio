@@ -57,9 +57,9 @@ export function ProjectsGrid({ className }: { className?: string }) {
   useEffect(() => {
     const unsubscribe = progress.on("change", (latest) => {
       if (latest >= triggerProgress) {
-        setReveal("true") // Reveal ON
+        setReveal("true") 
       } else {
-        setReveal("false") // Reveal OFF
+        setReveal("false")
       }
     })
 

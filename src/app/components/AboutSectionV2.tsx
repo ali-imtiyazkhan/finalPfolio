@@ -56,10 +56,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
               I ship MVPs in weeks and refine them in days — using server-first React, TypeScript, CI/CD, and lean iteration. No unnecessary complexity.
             </p>
 
-            <p>
-              <strong className="font-semibold text-slate-900">Simplicity is my rule of engineering.</strong>
-              If something feels heavy, I refactor it until it's elegant and future-proof.
-            </p>
+            
           </Typography>
 
         </div>

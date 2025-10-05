@@ -24,13 +24,7 @@ const projectsData: ProjectItem[] = [
     description: "Automotive Styling Website",
     isExternal: false,
   },
-  {
-    name: "Vets Choice Insurance",
-    url: externalLinks.vetsChoice,
-    date: "2025-05-20",
-    description: "Pet Insurance Website",
-    isExternal: true,
-  },
+
   {
     name: "Zero Icon Sprite",
     url: externalLinks.zeroIconSprite,
@@ -38,13 +32,7 @@ const projectsData: ProjectItem[] = [
     description: "SVG Build Tool",
     isExternal: true,
   },
-  {
-    name: "Automedics",
-    url: SITE_SLUGS.projectLinks.automedics,
-    date: "2024-12-02",
-    description: "Automotive Repair Website",
-    isExternal: false,
-  },
+ 
   {
     name: "Iron & Oak",
     url: SITE_SLUGS.projectLinks.iao,

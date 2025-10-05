@@ -7,27 +7,29 @@ import { Metadata } from "next"
 import { SITE_SLUGS } from "@/config/siteConfig"
 
 export const metadata: Metadata = {
-  title: "Web Developer Portfolio | Imtiyaz A. KHan | React & Next.js",
+  title: "Imtiyaz A. Khan | Full-Stack Web Developer – React, Next.js & Node.js",
   description:
-    "Explore the web developer portfolio of Imtiyaz A. Khan, a full-stack engineer building fast, modern web applications. See what a professional coding portfolio looks like, featuring projects in React, Next.js, and the custom-built React-Zero-UI library.",
-
+    "Portfolio of Imtiyaz A. Khan, a full-stack web developer specializing in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, and TypeScript. Explore modern web applications, backend integrations, services, and contact options.",
   keywords: [
-    "Web Developer Portfolio",
-    "Imtiyaz A.KHan",
-    "React",
-    "Next.js",
-    "React",
+    "Full-Stack Web Developer",
+    "Backend Developer",
+    "Node.js Developer",
+    "Express.js",
+    "MongoDB",
+    "PostgreSQL",
+    "REST API Developer",
+    "React Developer",
+    "Next.js Developer",
     "TypeScript",
-    "Full-Stack Engineer",
-
-    "React Developer Portfolio",
   ],
-  authors: [{ name: "Imtiyaz Ali Khan" }],
-  creator: "Imtiyaz Ali Khan",
+  authors: [{ name: "Imtiyaz A. Khan" }],
+  creator: "Imtiyaz A. Khan",
   alternates: {
     canonical: SITE_SLUGS.home,
   },
 }
+
+
 
 const PortfolioPage: React.FC = () => {
   return (
@@ -38,7 +40,7 @@ const PortfolioPage: React.FC = () => {
       <AboutSectionV2 />
       <ServicesSectionV2 />
       <RecruiterContact />
-    
+
     </main>
   )
 }

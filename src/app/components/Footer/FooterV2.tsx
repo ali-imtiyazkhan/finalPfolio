@@ -12,10 +12,6 @@ export const socialLinks = [
     icon: "linkedin",
   },
   {
-    href: SITE_NAP.profiles.facebook,
-    icon: "facebook",
-  },
-  {
     href: SITE_NAP.profiles.github,
     icon: "github",
   },

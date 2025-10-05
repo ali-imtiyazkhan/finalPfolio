@@ -24,6 +24,7 @@ const switzer = localFont({
   fallback: ["helvetica", "sans-serif"],
   preload: true,
 })
+
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN_URL),
   title: SITE_CONFIG.title,

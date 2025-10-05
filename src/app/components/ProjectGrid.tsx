@@ -90,7 +90,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           type="E-com WebSite"
           progress={progress}
           href={externalLinks.zeroCore}
-          dataText="View Case Study"
+          dataText="View On GitHub"
         />
 
         <AnimatedCard
@@ -103,7 +103,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           type="Chat App"
           progress={progress}
           href="https://github.com/ali-imtiyazkhan/chat-app"
-          dataText="View Case Study"
+          dataText="View On GitHub"
         />
         <AnimatedCard
           key={"Blog WebSite"}

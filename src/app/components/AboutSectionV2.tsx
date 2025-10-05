@@ -38,7 +38,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
               <p className="text-sm text-gray-500">Full-Stack Engineer (Next.js + TypeScript)</p>
             </MotionDiv>
           </div>
-          {/* ---------------- right column ---------------- */}
+          
           <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-slate-500">
             <p>
               <strong className="font-semibold text-slate-900">I’m a full-stack engineer</strong> who loves turning ideas into working products.

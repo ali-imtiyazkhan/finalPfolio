@@ -77,7 +77,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
   {
     id: "entitled",
     src: entitledPreview,
-    alt: "See On GitHub",
+    alt: "School Management",
     color: "#DA961AA5",
     type: "school Management Web App",
     text: "View Website",

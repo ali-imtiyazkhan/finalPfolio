@@ -6,7 +6,7 @@ import { AnimatedH2 } from "./ui/AnimatedH2";
 import { MotionUl, MotionLi } from "../utils/lazy-ui";
 import type { Variants } from "motion";
 
-// React Icons
+
 import { SiReact, SiNextdotjs, SiTypescript, SiPython, SiExpress, SiOpenai, SiMongodb, SiPostgresql, SiFigma, SiJavascript, SiDocker } from "react-icons/si";
 import { FaCode, FaDatabase, FaTools, FaGithub, FaServer, FaCloud } from "react-icons/fa";
 
@@ -41,7 +41,7 @@ const services = [
   { name: "Competitive Programming", emoji: "🏆" },
 ];
 
-// Motion variants
+
 const container: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.05 } },

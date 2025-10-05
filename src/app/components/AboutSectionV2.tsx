@@ -41,20 +41,27 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
           {/* ---------------- right column ---------------- */}
           <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-slate-500">
             <p>
-              <strong className="font-semibold text-slate-900">I build production systems and invent tools</strong> when the platform gets in the way. I created
-  
-              A Payment App  ,Blog Website , and a movie booking website .
+              <strong className="font-semibold text-slate-900">I’m a full-stack engineer</strong> who loves turning ideas into working products.
+              I’ve built everything from payment systems and blogs to a full movie ticket booking platform — all designed for real users, not just demos.
             </p>
 
             <p>
-              <strong className="font-semibold text-slate-900">I ship v1s in weeks and iterate in days</strong>. Leveraging tools server-first React, typed
-              APIs, CI/CD, and observability. Small PRs, rapid feedback, no ceremony.
+              <strong className="font-semibold text-slate-900">I solve problems fast — both in code and logic.</strong>
+              I’ve solved <span className="text-slate-900 font-semibold">300+ algorithmic challenges on LeetCode</span>,
+              sharpening my data structures and system design skills to write cleaner, more efficient code.
             </p>
+
             <p>
-              <strong className="font-semibold text-slate-900">My core philosophy is simplicity</strong>. if complexity balloons, I delete it and design the
-              simpler path.
+              <strong className="font-semibold text-slate-900">My workflow is speed with clarity.</strong>
+              I ship MVPs in weeks and refine them in days — using server-first React, TypeScript, CI/CD, and lean iteration. No unnecessary complexity.
+            </p>
+
+            <p>
+              <strong className="font-semibold text-slate-900">Simplicity is my rule of engineering.</strong>
+              If something feels heavy, I refactor it until it's elegant and future-proof.
             </p>
           </Typography>
+
         </div>
       </div>
     </section>

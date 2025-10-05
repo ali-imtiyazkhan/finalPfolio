@@ -78,7 +78,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           type="Movies Booking Website"
           progress={progress}
           href="https://movies-booking-web.vercel.app/"
-          dataText="View on GitHub"
+          dataText="Live Preview"
         />
         <AnimatedCard
           key="E-com WebSite"

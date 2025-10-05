@@ -41,7 +41,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     src: bespokePreview,
     alt: "E -Com Preview",
     color: "#024EFC",
-    type: "E Comm  Website",
+    type: "E-Comm  Website",
     text: "See On GitHub",
     href: SITE_SLUGS.projectLinks.bespoke,
     dataText: "See On GitHub",

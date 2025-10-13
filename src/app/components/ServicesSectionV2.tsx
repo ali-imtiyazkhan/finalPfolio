@@ -6,9 +6,30 @@ import { AnimatedH2 } from "./ui/AnimatedH2";
 import { MotionUl, MotionLi } from "../utils/lazy-ui";
 import type { Variants } from "motion";
 
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiPython,
+  SiExpress,
+  SiOpenai,
+  SiMongodb,
+  SiPostgresql,
+  SiFigma,
+  SiJavascript,
+  SiDocker,
+  SiFramer
+} from "react-icons/si";
+import {
+  FaCode,
+  FaDatabase,
+  FaTools,
+  FaGithub,
+  FaServer,
+  FaCloud,
+} from "react-icons/fa";
 
-import { SiReact, SiNextdotjs, SiTypescript, SiPython, SiExpress, SiOpenai, SiMongodb, SiPostgresql, SiFigma, SiJavascript, SiDocker } from "react-icons/si";
-import { FaCode, FaDatabase, FaTools, FaGithub, FaServer, FaCloud } from "react-icons/fa";
+import { m } from "framer-motion";
 
 const tech = [
   { name: "React", Icon: SiReact },
@@ -22,15 +43,16 @@ const tech = [
   { name: "Figma", Icon: SiFigma },
   { name: "JavaScript", Icon: SiJavascript },
   { name: "Docker", Icon: SiDocker },
-  { name: "Java", Icon: FaCode },   
-  { name: "C++", Icon: FaCode },        
+  { name: "Java", Icon: FaCode },
+  { name: "C++", Icon: FaCode },
   { name: "Prisma ORM", Icon: FaDatabase },
-  { name: "CI/CD", Icon: FaTools },          
-  { name: "Open Source", Icon: FaGithub },     
-  { name: "Hono", Icon: FaServer },            
-  { name: "Cloudflare Worker", Icon: FaCloud } 
-];
+  { name: "CI/CD", Icon: FaTools },
+  { name: "Open Source", Icon: FaGithub },
+  { name: "Hono", Icon: FaServer },
+  { name: "Cloudflare Worker", Icon: FaCloud },
+  { name: "Framer Motion", Icon: SiFramer },
 
+];
 
 const services = [
   { name: "Full Stack Development", emoji: "🪄" },
@@ -40,7 +62,6 @@ const services = [
   { name: "Code Reviews", emoji: "🪐" },
   { name: "Competitive Programming", emoji: "🏆" },
 ];
-
 
 const container: Variants = {
   hidden: {},
@@ -67,18 +88,24 @@ const element2: Variants = {
   },
 };
 
-export const ServicesSectionV2: React.FC<{ className?: string }> = ({ className = "" }) => {
+export const ServicesSectionV2: React.FC<{ className?: string }> = ({
+  className = "",
+}) => {
   return (
-    <section id="technologies" className={clsx("inside-container relative z-2 items-start justify-center md:flex-row md:items-center", className)}>
-      
-      {/* LEFT COLUMN */}
+    <section
+      id="technologies"
+      className={clsx(
+        "inside-container relative z-2 items-start justify-center md:flex-row md:items-center",
+        className
+      )}
+    >
+      {/* Tech Stack Section */}
       <div className="flex h-full flex-col gap-16 max-md:w-full md:[flex:2_0_0px]">
         <AnimatedH2>
           Engineering <br />
           <span className="text-slate-700">Toolkit</span>
         </AnimatedH2>
 
-        {/* Tech Stack */}
         <div className="w-full">
           <Text size="base" className="mb-8 hover:underline">
             My tech stack
@@ -94,9 +121,22 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({ className 
             {tech.map(({ name, Icon }) => (
               <MotionLi key={name} variants={element}>
                 <div className="group relative flex flex-col items-center">
-                  <div className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white hover:translate-y-0.5">
+
+                  <m.div
+                    whileHover={{
+                      
+                      rotate: [0, 360],
+                      transition: {
+                        duration: 0.8,
+                        ease: "linear",
+                      },
+                      
+                    }}
+                    className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white"
+                  >
                     <Icon size={30} className="object-contain" />
-                  </div>
+                  </m.div>
+
                   <span className="mt-2 text-xs text-center">{name}</span>
                 </div>
               </MotionLi>
@@ -105,7 +145,7 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({ className 
         </div>
       </div>
 
-      {/* Services */}
+      {/* Services Section */}
       <MotionUl
         initial="hidden"
         whileInView="visible"
@@ -114,7 +154,11 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({ className 
         className="grid [flex:1_0_0px] grid-cols-2 gap-8 md:grid-cols-1 mt-16 md:mt-0"
       >
         {services.map(({ name, emoji }) => (
-          <MotionLi key={name} variants={element2} className="flex items-center gap-3">
+          <MotionLi
+            key={name}
+            variants={element2}
+            className="flex items-center gap-3"
+          >
             <span className="button-shadow flex aspect-square h-10 w-10 items-center justify-center rounded-full bg-black text-white text-lg">
               {emoji}
             </span>

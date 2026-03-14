@@ -1,4 +1,4 @@
-import { AnimatedElement } from "@/app/components/ui/AnimatedElement"
+import { AnimatedElement } from "@/components/ui/AnimatedElement"
 
 export const WorkHero: React.FC = () => {
   return (

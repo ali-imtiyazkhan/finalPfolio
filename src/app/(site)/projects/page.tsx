@@ -1,7 +1,7 @@
 import React from "react"
 import { WorkHero } from "./WorkHero"
 import { ProjectsStatic } from "./ProjectsStatic"
-import { RecruiterContact } from "@/app/components/RecruiterContact"
+import { RecruiterContact } from "@/components/RecruiterContact"
 import { Metadata } from "next"
 import { SITE_SLUGS } from "@/config/siteConfig"
 import { projectsSchema, breadcrumbSchema } from "@/config/schemas"

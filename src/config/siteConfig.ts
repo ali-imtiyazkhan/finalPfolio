@@ -1,4 +1,4 @@
-export const DOMAIN_URL = "https://www.austinserb.com"
+export const DOMAIN_URL = "https://imtiyaz-pfolio.vercel.app"
 
 export const SITE_CONFIG = {
   title: "Imtiyaz",

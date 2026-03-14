@@ -1,22 +1,22 @@
-import { FooterV2 } from "./components/Footer/FooterV2"
+import { FooterV2 } from "@/components/Footer/FooterV2"
 import localFont from "next/font/local"
 import "./globalsV2.css"
 import { Metadata } from "next"
 import { DOMAIN_URL, SITE_CONFIG } from "@/config/siteConfig"
-import { TopBarV2 } from "./components/TopBar/TopBarV2"
-import { MotionWrapper } from "./utils/lazy-ui"
+import { TopBarV2 } from "@/components/TopBar/TopBarV2"
+import { MotionWrapper } from "@/lib/lazy-ui"
 import { Analytics } from "@vercel/analytics/next"
 import { bodyAttributes } from "../.zero-ui/attributes"
 
-import { ViewTransitions } from "./utils/ViewTransition"
-import { BottomBlurOverlay } from "./ui/BlurBottomOverlay"
-import { LazySplashCursor } from "./utils/lazy-splash-cursor"
-import { DesktopCursor } from "./utils/lazy-dot-cursor"
+import { ViewTransitions } from "@/lib/ViewTransition"
+import { BottomBlurOverlay } from "@/components/ui/BlurBottomOverlay"
+import { LazySplashCursor } from "@/lib/lazy-splash-cursor"
+import { DesktopCursor } from "@/lib/lazy-dot-cursor"
 import { breadcrumbSchema, contactPageSchema, profilePageSchema } from "@/config/schemas"
 import Script from "next/script"
 
 const switzer = localFont({
-  src: "./fonts/Switzer-Variable.woff2",
+  src: "../assets/fonts/Switzer-Variable.woff2",
   variable: "--font-switzer",
   display: "swap",
   style: "normal",

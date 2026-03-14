@@ -1,0 +1,51 @@
+﻿
+> imtiyaz_portfolio@0.1.0 build
+> next build
+
+   Γû▓ Next.js 15.5.9
+
+   Creating an optimized production build ...
+node.exe : Failed to compile.
+At line:1 char:1
++ & "C:\nvm4w\nodejs/node.exe" "C:\nvm4w\nodejs/node_modules/npm/bin/np ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Failed to compile.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+src\app\layout.tsx
+Module not found: Can't resolve '../assets/fonts/Switzer-Variable.woff2'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/layout.tsx
+
+./src/components/ProjectCard/AnimatedCard.tsx
+Module not found: Can't resolve '../../utils/Link'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/ProjectGrid.tsx
+
+./src/components/ProjectCard/AnimatedCard.tsx
+Module not found: Can't resolve '../../hooks/useCompositorSpring'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/ProjectGrid.tsx
+
+./src/components/ProjectGrid.tsx
+Module not found: Can't resolve '@/hooks/useOffset'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/components/ProjectGrid.tsx
+Module not found: Can't resolve '@/hooks/useMediaQuery'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors

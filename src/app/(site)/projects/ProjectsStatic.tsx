@@ -4,9 +4,12 @@ import iaoPreview from "@/../public/images/iao-preview-v2.webp"
 import bespokePreview from "@/../public/images/bespoke-preview-v2.webp"
 import automedicsPreview from "@/../public/images/automedics-preview-v2.webp"
 import entitledPreview from "@/../public/images/entitled-preview-v2.webp"
-import IconSpritePreview from "@/../public/images/zero-icon-sprite-preview.jpg"
 import zeroPreview from "@/../public/images/react-zero-ui-preview.jpg"
-import vetsChoiceInsurancePreview from "@/../public/images/vets-choice-insurance-preview.webp"
+import codesyncPreview from "@/../public/images/codesync-preview.webp"
+import leetcodematePreview from "@/../public/images/leetcodemate-preview.webp"
+import contestplatformPreview from "@/../public/images/contestplatform-preview.webp"
+import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
+import canavaxPreview from "@/../public/images/canavax-preview.webp"
 import { Link } from "@/lib/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
@@ -84,6 +87,66 @@ export const STATIC_PROJECTS: StaticProject[] = [
     href: externalLinks.entitled,
     dataText: "See On GitHub",
     ariaLabel: "View Entitled Website",
+    isExternal: true,
+  },
+  {
+    id: "codesync",
+    src: codesyncPreview,
+    alt: "CodeSync - Preview",
+    color: "#2ecc71",
+    type: "Collaborative Code Editor",
+    text: "Live Preview",
+    href: SITE_SLUGS.projectLinks.codesync,
+    dataText: "Live Preview",
+    ariaLabel: "View CodeSync Live",
+    isExternal: true,
+  },
+  {
+    id: "leetcodemate",
+    src: leetcodematePreview,
+    alt: "LeetCodeMate - Preview",
+    color: "#f1c40f",
+    type: "LeetCode Assistant",
+    text: "See on GitHub",
+    href: SITE_SLUGS.projectLinks.leetcodemate,
+    dataText: "See On GitHub",
+    ariaLabel: "See LeetCodeMate on GitHub",
+    isExternal: false,
+  },
+  {
+    id: "contestplatform",
+    src: contestplatformPreview,
+    alt: "ContestPlatform - Preview",
+    color: "#3498db",
+    type: "Coding Contest Platform",
+    text: "Live Preview",
+    href: SITE_SLUGS.projectLinks.contestplatform,
+    dataText: "Live Preview",
+    ariaLabel: "View ContestPlatform Live",
+    isExternal: true,
+  },
+  {
+    id: "filekeeper",
+    src: filekeeperPreview,
+    alt: "FileKeeper - Preview",
+    color: "#9b59b6",
+    type: "File Management System",
+    text: "Live Preview",
+    href: SITE_SLUGS.projectLinks.filekeeper,
+    dataText: "Live Preview",
+    ariaLabel: "View FileKeeper Live",
+    isExternal: true,
+  },
+  {
+    id: "canavax",
+    src: canavaxPreview,
+    alt: "Canavax - Preview",
+    color: "#e67e22",
+    type: "Canvas Drawing Tool",
+    text: "Live Preview",
+    href: SITE_SLUGS.projectLinks.canavax,
+    dataText: "Live Preview",
+    ariaLabel: "View Canavax Live",
     isExternal: true,
   },
 ]

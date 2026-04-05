@@ -41,6 +41,16 @@ export const TopBarV2: React.FC = () => {
                   Contact
                 </Link>
               </li>
+              <li className="flex">
+                <a
+                  href="/images/Imtiyaz_resume-new.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bubble-hover hidden rounded-full border border-gray-200 bg-slate-900 px-3 py-1 font-medium text-white shadow-md duration-300 hover:translate-y-0.5 hover:bg-slate-800 hover:shadow-none md:inline-block"
+                >
+                  Resume ↓
+                </a>
+              </li>
             </ul>
             {/* Mobile Dots Menu (only visible on small screens) */}
             <div className="flex md:hidden">

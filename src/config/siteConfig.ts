@@ -48,6 +48,11 @@ export const SITE_SLUGS = {
     iao: "https://blog-website-9qk3.vercel.app/",
     automedics: "https://github.com/ali-imtiyazkhan",
     bespoke: "https://github.com/ali-imtiyazkhan",
+    codesync: "https://100xcodesync.vercel.app/",
+    leetcodemate: "https://github.com/ali-imtiyazkhan/leetcode_mate",
+    contestplatform: "https://100xcontest.vercel.app/",
+    filekeeper: "https://notes-keeper-web.vercel.app/",
+    canavax: "https://excalidraw-2-one.vercel.app/",
   },
 } as const
 

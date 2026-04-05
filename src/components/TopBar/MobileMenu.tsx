@@ -29,6 +29,17 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
           Contact
         </Link>
       </li>
+      <li className={clsx("mobile-menu-item transform pt-3 pb-4 transition-all duration-300 ease-in-out")}>
+        <a
+          href="/images/Imtiyaz_resume-new.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setMobileMenu("closed")}
+          className="bubble-hover block rounded-full border border-gray-200 bg-slate-900 px-3 py-2 text-center font-medium text-white shadow-lg duration-300 hover:border-white"
+        >
+          Resume ↓
+        </a>
+      </li>
     </ul>
   )
 }

@@ -47,6 +47,41 @@ const projectsData: ProjectItem[] = [
     description: "Event Management Web App",
     isExternal: true,
   },
+  {
+    name: "CodeSync",
+    url: SITE_SLUGS.projectLinks.codesync,
+    date: "2025-06-15",
+    description: "Real-time collaborative code editor",
+    isExternal: false,
+  },
+  {
+    name: "LeetCodeMate",
+    url: SITE_SLUGS.projectLinks.leetcodemate,
+    date: "2025-05-20",
+    description: "LeetCode problem-solving assistant",
+    isExternal: false,
+  },
+  {
+    name: "ContestPlatform",
+    url: SITE_SLUGS.projectLinks.contestplatform,
+    date: "2025-04-10",
+    description: "Scalable coding contest platform",
+    isExternal: false,
+  },
+  {
+    name: "FileKeeper",
+    url: SITE_SLUGS.projectLinks.filekeeper,
+    date: "2025-03-05",
+    description: "Secure file management system",
+    isExternal: false,
+  },
+  {
+    name: "Canavax",
+    url: SITE_SLUGS.projectLinks.canavax,
+    date: "2025-02-15",
+    description: "Canvas-based drawing tool",
+    isExternal: false,
+  },
 ]
 
 export const projectsSchema: WithContext<CollectionPage> = {

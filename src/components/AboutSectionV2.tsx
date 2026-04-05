@@ -8,6 +8,7 @@ import { AnimatedH2 } from "@/components/ui/AnimatedH2"
 import { ImageReveal } from "@/components/ImageReveal"
 import { MotionDiv } from "@/lib/lazy-ui"
 import { GitHubContributionGraph } from "./GitHubCalendar"
+import { LeetCodeStats } from "./LeetCodeStats"
 
 export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
   return (
@@ -63,6 +64,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
         </div>
         
         <GitHubContributionGraph username="ali-imtiyazkhan" />
+        <LeetCodeStats />
       </div>
     </section>
   )

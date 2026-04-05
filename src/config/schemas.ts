@@ -110,6 +110,13 @@ export const breadcrumbSchema: WithContext<BreadcrumbList> = {
   ],
 }
 
+export const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_CONFIG.siteName,
+  url: `${SITE_CONFIG.url}/`,
+}
+
 // Function to generate project-specific breadcrumb schema
 export const createProjectBreadcrumbSchema = (projectName: string, projectUrl: string): WithContext<BreadcrumbList> => ({
   "@context": "https://schema.org",

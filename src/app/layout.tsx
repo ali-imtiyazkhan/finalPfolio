@@ -12,7 +12,7 @@ import { ViewTransitions } from "@/lib/ViewTransition"
 import { BottomBlurOverlay } from "@/components/ui/BlurBottomOverlay"
 import { LazySplashCursor } from "@/lib/lazy-splash-cursor"
 import { DesktopCursor } from "@/lib/lazy-dot-cursor"
-import { breadcrumbSchema, contactPageSchema, profilePageSchema } from "@/config/schemas"
+import { breadcrumbSchema, contactPageSchema, profilePageSchema, webSiteSchema } from "@/config/schemas"
 import Script from "next/script"
 
 const switzer = localFont({
@@ -27,8 +27,28 @@ const switzer = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN_URL),
-  title: SITE_CONFIG.title,
+  title: {
+    default: SITE_CONFIG.title,
+    template: `%s | ${SITE_CONFIG.title}`,
+  },
   description: SITE_CONFIG.description,
+  openGraph: {
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    url: DOMAIN_URL,
+    siteName: SITE_CONFIG.siteName,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -61,6 +81,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               type="application/ld+json"
               dangerouslySetInnerHTML={{
                 __html: JSON.stringify(breadcrumbSchema),
+              }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(webSiteSchema),
               }}
             />
             <FooterV2 />

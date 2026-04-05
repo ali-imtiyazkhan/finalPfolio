@@ -4,26 +4,26 @@ import { debounce } from "@/lib/utils"
 import { useIsoMorphicEffect } from "./uselsoMorphicEffict"
 
 const initialOffsets: Record<string, Partial<HeroOffset>> = {
-  automedics: {
-    x: 459.296875,
-    y: -980.328125,
-  },
-  "react-zero-ui": {
+  codesync: {
     x: 459.296875,
     y: -748,
   },
-  "iron-and-oak": {
+  leetcodemate: {
     x: 118.796875,
     y: -748,
   },
-  bespoke: {
+  filekeeper: {
+    x: 459.296875,
+    y: -980.328125,
+  },
+  canavax: {
     x: 118.796875,
     y: -980.328125,
   },
 }
 export function useOffset(cardIds: string[]) {
   const offsetsRef = useRef(initialOffsets)
-  const [, force] = useReducer((x) => x + 1, 0) // cheap re-render trigger
+  const [, force] = useReducer((x) => x + 1, 0)
 
   useIsoMorphicEffect(() => {
     const calc = () => {

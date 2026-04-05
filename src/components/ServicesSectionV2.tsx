@@ -124,15 +124,16 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
 
                   <m.div
                     whileHover={{
-                      
-                      rotate: [0, 360],
+                      y: [0, -12, -12, -12],
+                      scale: [1, 1.15, 1.15, 1.15],
+                      rotate: [0, 0, 360, 360],
                       transition: {
-                        duration: 0.8,
-                        ease: "linear",
+                        duration: 0.9,
+                        times: [0, 0.2, 0.8, 1],
+                        ease: ["easeOut", "linear", "easeInOut"],
                       },
-                      
                     }}
-                    className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white"
+                    className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white cursor-pointer"
                   >
                     <Icon size={30} className="object-contain" />
                   </m.div>

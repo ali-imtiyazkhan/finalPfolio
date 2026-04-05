@@ -3,6 +3,7 @@ import { ProjectsSection } from "@/components/ProjectSection"
 import { AboutSectionV2 } from "@/components/AboutSectionV2"
 import { ServicesSectionV2 } from "@/components/ServicesSectionV2"
 import { RecruiterContact } from "@/components/RecruiterContact"
+import { ExperienceTimeline } from "@/components/ExperienceTimeline"
 import { Metadata } from "next"
 import { SITE_SLUGS } from "@/config/siteConfig"
 
@@ -39,6 +40,7 @@ const PortfolioPage: React.FC = () => {
       <ProjectsSection />
       <AboutSectionV2 />
       <ServicesSectionV2 />
+      <ExperienceTimeline />
       <RecruiterContact />
 
     </main>

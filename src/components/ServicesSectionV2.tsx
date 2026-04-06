@@ -27,7 +27,14 @@ import {
   FaGithub,
   FaServer,
   FaCloud,
+  FaLayerGroup,
+  FaTrophy,
 } from "react-icons/fa";
+import { 
+  MdSpeed, 
+  MdOutlinePalette, 
+  MdRateReview 
+} from "react-icons/md";
 
 import { m } from "framer-motion";
 
@@ -55,12 +62,12 @@ const tech = [
 ];
 
 const services = [
-  { name: "Full Stack Development", emoji: "🪄" },
-  { name: "React Development", emoji: "🎨" },
-  { name: "Performance Optimization", emoji: "⚡" },
-  { name: "UI/UX Design", emoji: "🌐" },
-  { name: "Code Reviews", emoji: "🪐" },
-  { name: "Competitive Programming", emoji: "🏆" },
+  { name: "Full Stack Development", Icon: FaLayerGroup },
+  { name: "React Development", Icon: SiReact },
+  { name: "Performance Optimization", Icon: MdSpeed },
+  { name: "UI/UX Design", Icon: MdOutlinePalette },
+  { name: "Code Reviews", Icon: MdRateReview },
+  { name: "Competitive Programming", Icon: FaTrophy },
 ];
 
 const container: Variants = {
@@ -154,14 +161,14 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
         variants={container2}
         className="grid [flex:1_0_0px] grid-cols-2 gap-8 md:grid-cols-1 mt-16 md:mt-0"
       >
-        {services.map(({ name, emoji }) => (
+        {services.map(({ name, Icon }) => (
           <MotionLi
             key={name}
             variants={element2}
             className="flex items-center gap-3"
           >
-            <span className="button-shadow flex aspect-square h-10 w-10 items-center justify-center rounded-full bg-black text-white text-lg">
-              {emoji}
+            <span className="button-shadow flex aspect-square h-10 w-10 items-center justify-center rounded-full bg-black text-white">
+              <Icon size={20} />
             </span>
             <Text as="span" size="sm">
               {name}

@@ -31,7 +31,7 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
       </li>
       <li className={clsx("mobile-menu-item transform pt-3 pb-4 transition-all duration-300 ease-in-out")}>
         <a
-          href="/images/Imtiyaz_resume-new.pdf"
+          href="/Imtiyaz_Resume_Updated - -new.pdf"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMobileMenu("closed")}

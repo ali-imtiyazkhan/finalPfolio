@@ -5,13 +5,22 @@ import { MotionDiv } from "@/lib/lazy-ui"
 import { Text } from "@/components/ui/Elements"
 import { AnimatedH2 } from "@/components/ui/AnimatedH2"
 
+import {
+  FaRocket,
+  FaTrophy,
+  FaGithub,
+  FaGraduationCap,
+  FaBolt,
+  FaTerminal
+} from "react-icons/fa"
+
 type TimelineItem = {
   year: string
   title: string
   subtitle: string
   description: string
   tag: "education" | "project" | "achievement" | "opensource"
-  icon: string
+  icon: any
 }
 
 const TAG_STYLES: Record<string, { bg: string; text: string; dot: string }> = {
@@ -36,7 +45,7 @@ const TIMELINE: TimelineItem[] = [
     description:
       "Shipping production-grade apps with Next.js, TypeScript, WebRTC, and PostgreSQL. Building real-time collaborative tools and scalable platforms used by real users.",
     tag: "project",
-    icon: "🚀",
+    icon: FaRocket,
   },
   {
     year: "2025",
@@ -45,7 +54,7 @@ const TIMELINE: TimelineItem[] = [
     description:
       "Consistently solving algorithmic challenges across arrays, trees, graphs, and dynamic programming. Competed in biweekly contests with a peak max streak of 37 days.",
     tag: "achievement",
-    icon: "🏆",
+    icon: FaTrophy,
   },
   {
     year: "2025",
@@ -54,7 +63,7 @@ const TIMELINE: TimelineItem[] = [
     description:
       "Contributing to real-world open-source projects — fixing bugs, adding features, and collaborating with global developer communities on GitHub.",
     tag: "opensource",
-    icon: "🌍",
+    icon: FaGithub,
   },
   {
     year: "2024",
@@ -63,7 +72,7 @@ const TIMELINE: TimelineItem[] = [
     description:
       "Mastered the MERN stack and beyond — learned server-side rendering, REST APIs, authentication, database design, and deployment pipelines with Docker and CI/CD.",
     tag: "education",
-    icon: "📚",
+    icon: FaGraduationCap,
   },
   {
     year: "2024",
@@ -72,7 +81,7 @@ const TIMELINE: TimelineItem[] = [
     description:
       "Built and deployed my first full-stack applications — a blog platform, an e-commerce site, and a movie ticket booking system with payment integration.",
     tag: "project",
-    icon: "⚡",
+    icon: FaBolt,
   },
   {
     year: "2023",
@@ -81,7 +90,7 @@ const TIMELINE: TimelineItem[] = [
     description:
       "Began learning programming with C++ and competitive programming. Built a strong foundation in DSA that now powers my problem-solving approach in every project.",
     tag: "education",
-    icon: "🎯",
+    icon: FaTerminal,
   },
 ]
 
@@ -99,8 +108,8 @@ const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) =>
     >
       {/* Timeline line & dot */}
       <div className="relative flex flex-col items-center">
-        <div className={`z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-white bg-white shadow-md text-lg transition-transform duration-300 group-hover:scale-110`}>
-          {item.icon}
+        <div className={`z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
+          <item.icon size={18} />
         </div>
         {index < TIMELINE.length - 1 && (
           <div className="w-px flex-1 bg-gradient-to-b from-gray-200 to-gray-100" />

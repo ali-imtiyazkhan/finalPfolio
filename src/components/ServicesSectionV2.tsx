@@ -58,7 +58,7 @@ const tech = [
   { name: "Hono", Icon: FaServer },
   { name: "Cloudflare Worker", Icon: FaCloud },
   { name: "Framer Motion", Icon: SiFramer },
-
+  { name: "GitHub", Icon: FaGithub },
 ];
 
 const services = [

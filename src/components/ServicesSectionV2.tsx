@@ -18,7 +18,8 @@ import {
   SiFigma,
   SiJavascript,
   SiDocker,
-  SiFramer
+  SiFramer,
+  SiLangchain,
 } from "react-icons/si";
 import {
   FaCode,
@@ -29,6 +30,8 @@ import {
   FaCloud,
   FaLayerGroup,
   FaTrophy,
+  FaBrain,
+  FaTerminal,
 } from "react-icons/fa";
 import { 
   MdSpeed, 
@@ -38,27 +41,50 @@ import {
 
 import { m } from "framer-motion";
 
-const tech = [
-  { name: "React", Icon: SiReact },
-  { name: "Next", Icon: SiNextdotjs },
-  { name: "TypeScript", Icon: SiTypescript },
-  { name: "Python", Icon: SiPython },
-  { name: "Express", Icon: SiExpress },
-  { name: "OpenAI", Icon: SiOpenai },
-  { name: "MongoDB", Icon: SiMongodb },
-  { name: "PostgreSQL", Icon: SiPostgresql },
-  { name: "Figma", Icon: SiFigma },
-  { name: "JavaScript", Icon: SiJavascript },
-  { name: "Docker", Icon: SiDocker },
-  { name: "Java", Icon: FaCode },
-  { name: "C++", Icon: FaCode },
-  { name: "Prisma ORM", Icon: FaDatabase },
-  { name: "CI/CD", Icon: FaTools },
-  { name: "Open Source", Icon: FaGithub },
-  { name: "Hono", Icon: FaServer },
-  { name: "Cloudflare Worker", Icon: FaCloud },
-  { name: "Framer Motion", Icon: SiFramer },
-  { name: "GitHub", Icon: FaGithub },
+const techCategories = [
+  {
+    title: "AI & Generative AI",
+    items: [
+      { name: "OpenAI", Icon: SiOpenai },
+      { name: "LangChain", Icon: SiLangchain },
+      { name: "GenAI", Icon: FaBrain },
+      { name: "Prompt Eng.", Icon: FaTerminal },
+    ],
+  },
+  {
+    title: "Core Technologies",
+    items: [
+      { name: "Next.js", Icon: SiNextdotjs },
+      { name: "React", Icon: SiReact },
+      { name: "TypeScript", Icon: SiTypescript },
+      { name: "JavaScript", Icon: SiJavascript },
+      { name: "Python", Icon: SiPython },
+      { name: "C++", Icon: FaCode },
+      { name: "Java", Icon: FaCode },
+    ],
+  },
+  {
+    title: "Backend & Databases",
+    items: [
+      { name: "Express", Icon: SiExpress },
+      { name: "PostgreSQL", Icon: SiPostgresql },
+      { name: "MongoDB", Icon: SiMongodb },
+      { name: "Prisma ORM", Icon: FaDatabase },
+      { name: "Hono", Icon: FaServer },
+      { name: "Cloudflare", Icon: FaCloud },
+    ],
+  },
+  {
+    title: "DevOps & Tools",
+    items: [
+      { name: "Docker", Icon: SiDocker },
+      { name: "Framer Motion", Icon: SiFramer },
+      { name: "CI/CD", Icon: FaTools },
+      { name: "Figma", Icon: SiFigma },
+      { name: "GitHub", Icon: FaGithub },
+      { name: "Open Source", Icon: FaGithub },
+    ],
+  },
 ];
 
 const services = [
@@ -107,49 +133,52 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
       )}
     >
       {/* Tech Stack Section */}
-      <div className="flex h-full flex-col gap-16 max-md:w-full md:[flex:2_0_0px]">
+      <div className="flex h-full flex-col gap-12 max-md:w-full md:[flex:2_0_0px]">
         <AnimatedH2>
           Engineering <br />
           <span className="text-slate-700">Toolkit</span>
         </AnimatedH2>
 
-        <div className="w-full">
-          <Text size="base" className="mb-8 hover:underline">
-            My tech stack
-          </Text>
+        <div className="w-full space-y-10">
+          {techCategories.map((category) => (
+            <div key={category.title} className="space-y-4">
+              <Text size="sm" className="font-semibold text-slate-400 uppercase tracking-widest block">
+                {category.title}
+              </Text>
+              
+              <MotionUl
+                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6"
+                variants={container}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              >
+                {category.items.map(({ name, Icon }) => (
+                  <MotionLi key={name} variants={element}>
+                    <div className="group relative flex flex-col items-center">
+                      <m.div
+                        whileHover={{
+                          y: [0, -12, -12, -12],
+                          scale: [1, 1.15, 1.15, 1.15],
+                          rotate: [0, 0, 360, 360],
+                          transition: {
+                            duration: 0.9,
+                            times: [0, 0.2, 0.8, 1],
+                            ease: ["easeOut", "linear", "easeInOut"],
+                          },
+                        }}
+                        className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white cursor-pointer"
+                      >
+                        <Icon size={30} className="object-contain" />
+                      </m.div>
 
-          <MotionUl
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 max-[420px]:justify-items-center md:justify-items-center"
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-          >
-            {tech.map(({ name, Icon }) => (
-              <MotionLi key={name} variants={element}>
-                <div className="group relative flex flex-col items-center">
-
-                  <m.div
-                    whileHover={{
-                      y: [0, -12, -12, -12],
-                      scale: [1, 1.15, 1.15, 1.15],
-                      rotate: [0, 0, 360, 360],
-                      transition: {
-                        duration: 0.9,
-                        times: [0, 0.2, 0.8, 1],
-                        ease: ["easeOut", "linear", "easeInOut"],
-                      },
-                    }}
-                    className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white cursor-pointer"
-                  >
-                    <Icon size={30} className="object-contain" />
-                  </m.div>
-
-                  <span className="mt-2 text-xs text-center">{name}</span>
-                </div>
-              </MotionLi>
-            ))}
-          </MotionUl>
+                      <span className="mt-2 text-[10px] text-center text-slate-600 font-medium truncate max-w-[80px]">{name}</span>
+                    </div>
+                  </MotionLi>
+                ))}
+              </MotionUl>
+            </div>
+          ))}
         </div>
       </div>
 

@@ -49,7 +49,7 @@ const TIMELINE: TimelineItem[] = [
   },
   {
     year: "2025",
-    title: "300+ LeetCode Problems Solved",
+    title: "400+ LeetCode Problems Solved",
     subtitle: "Contest Rating: 1,473 · Top 53%",
     description:
       "Consistently solving algorithmic challenges across arrays, trees, graphs, and dynamic programming. Competed in biweekly contests with a peak max streak of 37 days.",

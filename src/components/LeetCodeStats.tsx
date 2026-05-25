@@ -5,11 +5,11 @@ import { MotionDiv } from "@/lib/lazy-ui"
 import { Text } from "@/components/ui/Elements"
 
 const LEETCODE_STATS = {
-  total: 316,
+  total: 421,
   totalProblems: 3892,
-  easy: { solved: 113, total: 935, color: "#22c55e", label: "Easy" },
-  medium: { solved: 171, total: 2036, color: "#f59e0b", label: "Medium" },
-  hard: { solved: 32, total: 921, color: "#ef4444", label: "Hard" },
+  easy: { solved: 149, total: 935, color: "#22c55e", label: "Easy" },
+  medium: { solved: 232, total: 2036, color: "#f59e0b", label: "Medium" },
+  hard: { solved: 40, total: 921, color: "#ef4444", label: "Hard" },
   contestRating: 1473,
   topPercentage: 53.39,
   maxStreak: 37,

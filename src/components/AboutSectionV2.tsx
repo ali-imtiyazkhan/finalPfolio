@@ -49,7 +49,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
 
             <p>
               <strong className="font-semibold text-slate-900">I solve problems fast — both in code and logic.</strong>
-              I’ve solved <span className="text-slate-900 font-semibold">300+ algorithmic challenges on LeetCode</span>,
+              I’ve solved <span className="text-slate-900 font-semibold">400+ algorithmic challenges on LeetCode</span>,
               sharpening my data structures and system design skills to write cleaner, more efficient code.
             </p>
 

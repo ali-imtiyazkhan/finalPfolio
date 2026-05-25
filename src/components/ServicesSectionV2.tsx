@@ -20,6 +20,11 @@ import {
   SiDocker,
   SiFramer,
   SiLangchain,
+  SiRust,
+  SiGo,
+  SiRedis,
+  SiApachekafka,
+  SiPostman,
 } from "react-icons/si";
 import {
   FaCode,
@@ -38,6 +43,7 @@ import {
   MdOutlinePalette, 
   MdRateReview 
 } from "react-icons/md";
+import { TbRegex } from "react-icons/tb";
 
 import { m } from "framer-motion";
 
@@ -59,6 +65,8 @@ const techCategories = [
       { name: "TypeScript", Icon: SiTypescript },
       { name: "JavaScript", Icon: SiJavascript },
       { name: "Python", Icon: SiPython },
+      { name: "Go", Icon: SiGo },
+      { name: "Rust", Icon: SiRust },
       { name: "C++", Icon: FaCode },
       { name: "Java", Icon: FaCode },
     ],
@@ -69,6 +77,8 @@ const techCategories = [
       { name: "Express", Icon: SiExpress },
       { name: "PostgreSQL", Icon: SiPostgresql },
       { name: "MongoDB", Icon: SiMongodb },
+      { name: "Redis", Icon: SiRedis },
+      { name: "Kafka", Icon: SiApachekafka },
       { name: "Prisma ORM", Icon: FaDatabase },
       { name: "Hono", Icon: FaServer },
       { name: "Cloudflare", Icon: FaCloud },
@@ -81,8 +91,10 @@ const techCategories = [
       { name: "Framer Motion", Icon: SiFramer },
       { name: "CI/CD", Icon: FaTools },
       { name: "Figma", Icon: SiFigma },
+      { name: "Postman", Icon: SiPostman },
       { name: "GitHub", Icon: FaGithub },
       { name: "Open Source", Icon: FaGithub },
+      { name: "Regex", Icon: TbRegex },
     ],
   },
 ];

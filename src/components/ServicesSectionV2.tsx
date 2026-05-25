@@ -51,50 +51,50 @@ const techCategories = [
   {
     title: "AI & Generative AI",
     items: [
-      { name: "OpenAI", Icon: SiOpenai },
-      { name: "LangChain", Icon: SiLangchain },
-      { name: "GenAI", Icon: FaBrain },
-      { name: "Prompt Eng.", Icon: FaTerminal },
+      { name: "OpenAI", Icon: SiOpenai, tooltip: "GPT APIs & Assistants" },
+      { name: "LangChain", Icon: SiLangchain, tooltip: "LLM orchestration" },
+      { name: "GenAI", Icon: FaBrain, tooltip: "Generative AI apps" },
+      { name: "Prompt Eng.", Icon: FaTerminal, tooltip: "Prompt design & tuning" },
     ],
   },
   {
     title: "Core Technologies",
     items: [
-      { name: "Next.js", Icon: SiNextdotjs },
-      { name: "React", Icon: SiReact },
-      { name: "TypeScript", Icon: SiTypescript },
-      { name: "JavaScript", Icon: SiJavascript },
-      { name: "Python", Icon: SiPython },
-      { name: "Go", Icon: SiGo },
-      { name: "Rust", Icon: SiRust },
-      { name: "C++", Icon: FaCode },
-      { name: "Java", Icon: FaCode },
+      { name: "Next.js", Icon: SiNextdotjs, tooltip: "Used in all projects" },
+      { name: "React", Icon: SiReact, tooltip: "Primary UI library" },
+      { name: "TypeScript", Icon: SiTypescript, tooltip: "Daily driver" },
+      { name: "JavaScript", Icon: SiJavascript, tooltip: "Proficient" },
+      { name: "Python", Icon: SiPython, tooltip: "Scripting & AI" },
+      { name: "Go", Icon: SiGo, tooltip: "Backend services" },
+      { name: "Rust", Icon: SiRust, tooltip: "Systems programming" },
+      { name: "C++", Icon: FaCode, tooltip: "DSA & CP" },
+      { name: "Java", Icon: FaCode, tooltip: "OOP fundamentals" },
     ],
   },
   {
     title: "Backend & Databases",
     items: [
-      { name: "Express", Icon: SiExpress },
-      { name: "PostgreSQL", Icon: SiPostgresql },
-      { name: "MongoDB", Icon: SiMongodb },
-      { name: "Redis", Icon: SiRedis },
-      { name: "Kafka", Icon: SiApachekafka },
-      { name: "Prisma ORM", Icon: FaDatabase },
-      { name: "Hono", Icon: FaServer },
-      { name: "Cloudflare", Icon: FaCloud },
+      { name: "Express", Icon: SiExpress, tooltip: "REST APIs" },
+      { name: "PostgreSQL", Icon: SiPostgresql, tooltip: "Primary SQL DB" },
+      { name: "MongoDB", Icon: SiMongodb, tooltip: "NoSQL projects" },
+      { name: "Redis", Icon: SiRedis, tooltip: "Caching & pub/sub" },
+      { name: "Kafka", Icon: SiApachekafka, tooltip: "Event streaming" },
+      { name: "Prisma ORM", Icon: FaDatabase, tooltip: "Type-safe DB access" },
+      { name: "Hono", Icon: FaServer, tooltip: "Edge-first framework" },
+      { name: "Cloudflare", Icon: FaCloud, tooltip: "Workers & Pages" },
     ],
   },
   {
     title: "DevOps & Tools",
     items: [
-      { name: "Docker", Icon: SiDocker },
-      { name: "Framer Motion", Icon: SiFramer },
-      { name: "CI/CD", Icon: FaTools },
-      { name: "Figma", Icon: SiFigma },
-      { name: "Postman", Icon: SiPostman },
-      { name: "GitHub", Icon: FaGithub },
-      { name: "Open Source", Icon: FaGithub },
-      { name: "Regex", Icon: TbRegex },
+      { name: "Docker", Icon: SiDocker, tooltip: "Containerization" },
+      { name: "Framer Motion", Icon: SiFramer, tooltip: "React animations" },
+      { name: "CI/CD", Icon: FaTools, tooltip: "GitHub Actions" },
+      { name: "Figma", Icon: SiFigma, tooltip: "UI/UX design" },
+      { name: "Postman", Icon: SiPostman, tooltip: "API testing" },
+      { name: "GitHub", Icon: FaGithub, tooltip: "Version control" },
+      { name: "Open Source", Icon: FaGithub, tooltip: "Active contributor" },
+      { name: "Regex", Icon: TbRegex, tooltip: "Pattern matching" },
     ],
   },
 ];
@@ -165,7 +165,7 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
                 whileInView="visible"
                 viewport={{ once: true, margin: "0px 0px -100px 0px" }}
               >
-                {category.items.map(({ name, Icon }) => (
+                {category.items.map(({ name, Icon, tooltip }) => (
                   <MotionLi key={name} variants={element}>
                     <div className="group relative flex flex-col items-center">
                       <m.div
@@ -183,6 +183,14 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
                       >
                         <Icon size={30} className="object-contain" />
                       </m.div>
+
+                      {/* Tooltip */}
+                      {tooltip && (
+                        <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 px-2.5 py-1 text-[10px] font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+                          {tooltip}
+                          <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-2 rotate-45 bg-slate-900" />
+                        </span>
+                      )}
 
                       <span className="mt-2 text-[10px] text-center text-slate-600 font-medium truncate max-w-[80px]">{name}</span>
                     </div>

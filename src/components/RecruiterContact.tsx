@@ -21,7 +21,7 @@ export const RecruiterContact: React.FC = () => {
         >
           <div className="flex w-fit items-center gap-3 p-2 max-lg:justify-center">
             <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-slate-200">
-              <Image src={profilePhoto} alt="Austin Serb" fill sizes="80px" className="object-cover" />
+              <Image src={profilePhoto} alt="Imtiyaz A. Khan" fill sizes="80px" className="object-cover" />
             </div>
             <div className="flex flex-col items-start text-sm whitespace-nowrap text-slate-700">
               <h2 className="font-medium text-slate-900">Imtiyaz A. Khan</h2>

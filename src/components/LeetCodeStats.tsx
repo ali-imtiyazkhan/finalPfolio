@@ -5,15 +5,15 @@ import { MotionDiv } from "@/lib/lazy-ui"
 import { Text } from "@/components/ui/Elements"
 
 const LEETCODE_STATS = {
-  total: 421,
+  total: 439,
   totalProblems: 3892,
-  easy: { solved: 149, total: 935, color: "#22c55e", label: "Easy" },
-  medium: { solved: 232, total: 2036, color: "#f59e0b", label: "Medium" },
-  hard: { solved: 40, total: 921, color: "#ef4444", label: "Hard" },
+  easy: { solved: 161, total: 935, color: "#22c55e", label: "Easy" },
+  medium: { solved: 235, total: 2036, color: "#f59e0b", label: "Medium" },
+  hard: { solved: 43, total: 921, color: "#ef4444", label: "Hard" },
   contestRating: 1473,
-  topPercentage: 53.39,
-  maxStreak: 37,
-  badges: 1,
+  topPercentage: 58.27,
+  maxStreak: 45,
+  badges: 4,
 }
 
 const DifficultyBar = ({

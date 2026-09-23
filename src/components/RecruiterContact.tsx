@@ -10,33 +10,33 @@ import { WhiteButtonLink } from "@/components/ui/WhiteButtonLink"
 
 export const RecruiterContact: React.FC = () => {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-gray-200">
+    <section id="contact" className="scroll-mt-20 border-t border-[var(--border)] transition-colors duration-200">
       <div className="inside-container-small">
         <MotionDiv
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 100, damping: 14 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="relative z-1 mx-auto flex w-full max-w-2xl flex-col items-center gap-8 rounded-2xl border border-gray-300 bg-white p-5.5 max-lg:text-center max-sm:px-1 sm:p-8"
+          className="relative z-1 mx-auto flex w-full max-w-2xl flex-col items-center gap-8 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-5.5 transition-colors duration-200 max-lg:text-center max-sm:px-4 sm:p-8"
         >
           <div className="flex w-fit items-center gap-3 p-2 max-lg:justify-center">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-slate-200">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-4 ring-[var(--border)]">
               <Image src={profilePhoto} alt="Imtiyaz A. Khan" fill sizes="80px" className="object-cover" />
             </div>
-            <div className="flex flex-col items-start text-sm whitespace-nowrap text-slate-700">
-              <h2 className="font-medium text-slate-900">Imtiyaz A. Khan</h2>
-              <p className="text-slate-500">Full-Stack - Backend Focused</p>
+            <div className="flex flex-col items-start text-sm whitespace-nowrap text-[var(--text-secondary)]">
+              <h2 className="font-medium text-[var(--text-primary)]">Imtiyaz A. Khan</h2>
+              <p className="text-[var(--text-muted)]">Full-Stack - Backend Focused</p>
             </div>
           </div>
 
           <div className="flex flex-col items-center gap-4 max-lg:items-center">
-            <H3 className="text-center font-normal tracking-tight">
+            <H3 className="text-center font-normal tracking-tight text-[var(--text-primary)]">
               <span>
                 Building Something Amazing? <br />
               </span>
-              <span className="text-slate-500">Let&apos;s chat.</span>
+              <span className="text-[var(--text-muted)]">Let&apos;s chat.</span>
             </H3>
-            <Text className="max-w-2xl text-center text-balance">
+            <Text className="max-w-2xl text-center text-balance text-[var(--text-secondary)]">
               I build fast, accessible web apps with React, Next.js, and TypeScript. I&apos;m looking for teams that value product quality, performance, and
               thoughtful UX.
             </Text>
@@ -44,7 +44,7 @@ export const RecruiterContact: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-4 max-lg:justify-center">
             <BlackButtonLink href={`mailto:${SITE_NAP.email}`}>
-              <Mail height={18} width={18} className="h-[18px] w-[18px] text-white" />
+              <Mail height={18} width={18} className="h-[18px] w-[18px]" />
               Email me
             </BlackButtonLink>
 

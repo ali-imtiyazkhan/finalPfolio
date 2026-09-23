@@ -12,7 +12,7 @@ import { useScroll, useSpring } from "motion/react"
 import { useUI } from "@react-zero-ui/core"
 import { SITE_SLUGS } from "@/config/siteConfig"
 
-const ids = ["codesync", "leetcodemate", "filekeeper", "canavax"]
+const ids = ["codesync", "leetcodemate", "filekeeper", "emailbot"]
 
 export function ProjectsGrid({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -39,14 +39,14 @@ export function ProjectsGrid({ className }: { className?: string }) {
 
   const offsets = Object.fromEntries(
     ids.map((id) => {
-      const base = rawOffsets[id]
-      const t = OFFSET_TUNING[id]
+      const base = rawOffsets?.[id]
+      const t = OFFSET_TUNING[id] || { dx: 0, dy: 0, rot: 0, s: 1 }
       return [
         id,
         {
-          x: base.x! + t.dx!,
-          y: base.y! + t.dy!,
-          rot: t.rot!,
+          x: (base?.x ?? 0) + (t.dx ?? 0),
+          y: (base?.y ?? 0) + (t.dy ?? 0),
+          rot: t.rot ?? 0,
           s: t.s ?? 1,
         },
       ]
@@ -55,6 +55,13 @@ export function ProjectsGrid({ className }: { className?: string }) {
 
   const triggerProgress = isMobile ? (isSmallScreen ? 0.15 : 0.2) : 0.5
   useEffect(() => {
+    const current = progress.get()
+    if (current >= triggerProgress) {
+      setReveal("true")
+    } else {
+      setReveal("false")
+    }
+
     const unsubscribe = progress.on("change", (latest) => {
       if (latest >= triggerProgress) {
         setReveal("true") 

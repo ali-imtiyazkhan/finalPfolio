@@ -44,7 +44,7 @@ function wrap(node: React.ReactNode) {
 export function AnimatedH2({ className = "", children }: { className?: string; children: React.ReactNode }) {
   return (
     <MotionH2
-      className={clsx("text-4xl tracking-tighter text-slate-900 md:text-5xl md:leading-13 lg:text-6xl lg:leading-15", className)}
+      className={clsx("text-4xl tracking-tighter text-[var(--text-primary)] md:text-5xl md:leading-13 lg:text-6xl lg:leading-15", className)}
       variants={container}
       initial="hidden"
       whileInView="show"

@@ -7,8 +7,7 @@ import { SITE_SLUGS } from "@/config/siteConfig"
 
 export const ProjectsSection: React.FC = () => {
   return (
-    <section className="inside-container bg-white">
-
+    <section className="inside-container bg-[var(--bg)] transition-colors duration-200">
       <div className="pointer-events-none relative z-5 mix-blend-exclusion">
         <AnimatedText
           text="Latest Projects "
@@ -21,8 +20,10 @@ export const ProjectsSection: React.FC = () => {
       <ProjectsGrid />
 
       <Link href={SITE_SLUGS.projects} className="group flex items-center justify-center gap-2">
-        <span className="underline-hover text-xl leading-6 tracking-tight text-slate-700 md:text-2xl">View More Projects</span>
-        <Icon name="arrow-right" height={25} width={18} className="group-hover:animate-wiggle-right" strokeWidth={0.5} />
+        <span className="underline-hover text-xl leading-6 tracking-tight text-[var(--text-secondary)] transition-colors group-hover:text-[var(--text-primary)] md:text-2xl">
+          View More Projects
+        </span>
+        <Icon name="arrow-right" height={25} width={18} className="text-[var(--text-secondary)] transition-colors group-hover:animate-wiggle-right group-hover:text-[var(--text-primary)]" strokeWidth={0.5} />
       </Link>
     </section>
   )

@@ -36,7 +36,7 @@ export function useOffset(cardIds: string[]) {
         const h = hero.getBoundingClientRect()
         next[id] = { x: h.left - g.left, y: h.top - g.top }
       }
-      offsetsRef.current = next
+      offsetsRef.current = { ...initialOffsets, ...offsetsRef.current, ...next }
 
       force() // tell React styles changed
     }

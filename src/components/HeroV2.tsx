@@ -11,24 +11,24 @@ export const HeroV2 = () => {
           <AnimatedElement
             element="span"
             delay={0.6}
-            className="z-2 inline-flex items-center gap-2 self-start rounded-full border border-gray-100 bg-white px-3 py-2 text-xs font-medium shadow-lg"
+            className="z-2 inline-flex items-center gap-2 self-start rounded-full border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 text-xs font-medium text-[var(--text-primary)] shadow-md transition-colors"
           >
             <ActivityDot /> Open to work
           </AnimatedElement>
 
-          <h1 className="xs:text-5xl relative z-5 text-4xl leading-[1] font-medium tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+          <h1 className="xs:text-5xl relative z-5 text-4xl leading-[1] font-medium tracking-tight text-[var(--text-primary)] sm:text-6xl lg:text-7xl">
             <AnimatedElement element="span" offsetPx={20} fadeDirection="left" className="inline-block">
               Imtiyaz A. Khan
             </AnimatedElement>{" "}
             <br />
             <AnimatedElement element="span" offsetPx={40} delay={0.2} fadeDirection="top" className="inline-block"></AnimatedElement>
-            <AnimatedElement element="span" delay={0.4} offsetPx={20} fadeDirection="left" className="inline-block text-slate-700">
+            <AnimatedElement element="span" delay={0.4} offsetPx={20} fadeDirection="left" className="inline-block text-[var(--text-muted)]">
               Portfolio
             </AnimatedElement>
           </h1>
 
-          <AnimatedElement element="p" delay={0.6} className="max-w-xs text-sm leading-snug tracking-tight text-slate-700 md:max-w-sm md:pr-4 md:text-base">
-            <strong className="font-semibold text-slate-900">Backend-focused Full Stack Developer.</strong> Specializing in Next.js, Go, Rust, Redis, and Kafka.
+          <AnimatedElement element="p" delay={0.6} className="max-w-xs text-sm leading-snug tracking-tight text-[var(--text-secondary)] md:max-w-sm md:pr-4 md:text-base">
+            <strong className="font-semibold text-[var(--text-primary)]">Backend-focused Full Stack Developer.</strong> Specializing in Next.js, Go, Rust, Redis, and Kafka.
           </AnimatedElement>
 
           <CallToActionButton />
@@ -38,7 +38,7 @@ export const HeroV2 = () => {
         <HeroScrollClick />
 
         {/* subtle background ellipse */}
-        <div className="pointer-events-none absolute inset-y-0 left-1/3 -z-1 hidden w-full bg-radial from-indigo-100 via-transparent to-transparent blur-3xl md:block" />
+        <div className="pointer-events-none absolute inset-y-0 left-1/3 -z-1 hidden w-full bg-radial from-indigo-500/10 via-transparent to-transparent blur-3xl md:block" />
       </div>
     </section>
   )

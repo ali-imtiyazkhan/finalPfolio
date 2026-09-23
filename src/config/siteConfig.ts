@@ -53,6 +53,7 @@ export const SITE_SLUGS = {
     contestplatform: "https://100xcontest.vercel.app/",
     filekeeper: "https://notes-keeper-web.vercel.app/",
     canavax: "https://excalidraw-2-one.vercel.app/",
+    emailbot: "https://emailbot-web.vercel.app/"
   },
 } as const
 

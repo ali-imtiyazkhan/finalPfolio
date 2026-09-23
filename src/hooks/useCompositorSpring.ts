@@ -1,28 +1,54 @@
 import { MotionValue } from "motion/react"
 import { type RefObject } from "react"
-// import { useIsoMorphicEffect } from ".uselsoMorphicEffict"
 import { useIsoMorphicEffect } from "./uselsoMorphicEffict"
 
-export function useCompositorSpring(ref: RefObject<HTMLElement | null>, progress: MotionValue<number>) {
+export interface SpringOffset {
+  x?: number
+  y?: number
+  rot?: number
+  s?: number
+}
+
+export function useCompositorSpring(
+  ref: RefObject<HTMLElement | null>,
+  progress: MotionValue<number>,
+  offset?: SpringOffset
+) {
   useIsoMorphicEffect(() => {
     const el = ref.current
     if (!el) return
     el.style.opacity = "1"
- 
+
+    const tx = offset?.x ?? 0
+    const ty = offset?.y ?? 0
+    const rot = offset?.rot ?? 0
+    const sc = offset?.s ?? 1
+
     const anim = el.animate(
       [
         {
-          transform: `translate3d(var(--tx, 0), var(--ty, 0), 0) scale(var(--sc, 1)) rotate(var(--rot, 0))`,
+          transform: `translate3d(${tx}px, ${ty}px, 0) scale(${sc}) rotate(${rot}deg)`,
         },
-        { transform: "translate3d(0, 0, 0) scale(1) rotate(0)" },
+        {
+          transform: `translate3d(0px, 0px, 0px) scale(1) rotate(0deg)`,
+        },
       ],
-      { duration: 1000, fill: "both", easing: "ease-out" }
+      { duration: 1000, fill: "both", easing: "linear" }
     )
-    anim.pause() // we'll scrub it manually
-    const total = anim.effect!.getComputedTiming().endTime // 1000 ms
+    anim.pause()
+    const total = 1000
 
-    /* Spring drives only .currentTime ------------------------ */
-    const unsubscribe = progress.on("change", (p) => (anim.currentTime = p * Number(total)))
-    return () => unsubscribe()
-  }, [progress])
+    const update = (p: number) => {
+      const clamped = Math.max(0, Math.min(1, p))
+      anim.currentTime = clamped * total
+    }
+
+    update(progress.get() ?? 0)
+    const unsubscribe = progress.on("change", update)
+
+    return () => {
+      unsubscribe()
+      anim.cancel()
+    }
+  }, [progress, offset?.x, offset?.y, offset?.rot, offset?.s])
 }

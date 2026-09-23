@@ -8,14 +8,14 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
   const [, setMobileMenu] = useUI<"open" | "closed">("mobile-menu", "closed")
 
   return (
-    <ul className={clsx("mobile-menu-container flex flex-col gap-3 rounded-b-lg border-gray-200 px-4 transition-all duration-300 ease-in-out md:hidden")}>
+    <ul className={clsx("mobile-menu-container flex flex-col gap-3 rounded-b-lg border-[var(--border)] px-4 transition-all duration-300 ease-in-out md:hidden")}>
       {navItems.map((item, index) => (
         <li
           key={item.name}
           className="mobile-menu-item transform text-lg transition-all duration-300 ease-in-out"
           style={{ "--index": index } as React.CSSProperties}
         >
-          <Link href={item.href} onClick={() => setMobileMenu("closed")} className="block pt-4 font-medium">
+          <Link href={item.href} onClick={() => setMobileMenu("closed")} className="block pt-4 font-medium text-[var(--text-primary)]">
             {item.name}
           </Link>
         </li>
@@ -24,7 +24,7 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
         <Link
           href={SITE_SLUGS.contact}
           onClick={() => setMobileMenu("closed")}
-          className="bubble-hover block rounded-full border border-gray-200 bg-white px-3 py-2 text-center font-medium shadow-lg duration-300 hover:border-white"
+          className="bubble-hover block rounded-full border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 text-center font-medium text-[var(--text-primary)] shadow-sm duration-300 hover:border-[var(--border-hover)]"
         >
           Contact
         </Link>
@@ -35,7 +35,7 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMobileMenu("closed")}
-          className="bubble-hover block rounded-full border border-gray-200 bg-slate-900 px-3 py-2 text-center font-medium text-white shadow-lg duration-300 hover:border-white"
+          className="bubble-hover block rounded-full border border-[var(--border)] bg-[var(--text-primary)] px-3 py-2 text-center font-medium text-[var(--bg)] shadow-sm duration-300 hover:opacity-90"
         >
           Resume ↓
         </a>

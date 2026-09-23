@@ -1,5 +1,7 @@
-import { StaticImageData } from "next/image"
-import { Card } from "@/components/ProjectCard/Card"
+"use client"
+
+import React from "react"
+import Image, { StaticImageData } from "next/image"
 import iaoPreview from "@/../public/images/iao-preview-v2.webp"
 import bespokePreview from "@/../public/images/bespoke-preview-v2.webp"
 import automedicsPreview from "@/../public/images/automedics-preview-v2.webp"
@@ -10,11 +12,14 @@ import leetcodematePreview from "@/../public/images/leetcodemate-preview.webp"
 import contestplatformPreview from "@/../public/images/contestplatform-preview.webp"
 import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
 import canavaxPreview from "@/../public/images/canavax-preview.webp"
-import { Link } from "@/lib/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
-type StaticProject = {
+export type StaticProject = {
   id: string
+  title: string
+  date: string
+  description: string
+  tags: string[]
   src: StaticImageData
   alt: string
   color: string
@@ -28,81 +33,91 @@ type StaticProject = {
 
 export const STATIC_PROJECTS: StaticProject[] = [
   {
-    id: "react-zero-ui",
-    src: zeroPreview,
-    alt: "Movies Booking Web - Preview",
-    color: "#3B06D1",
-    type: "Movies Booking Web",
-    text: "Live preview",
-    href: externalLinks.zeroCore,
-    dataText: "Live PreView",
-    ariaLabel: "View React Zero UI on GitHub",
-    isExternal: true,
-  },
-  {
-    id: "bespoke",
-    src: bespokePreview,
-    alt: "E -Com Preview",
-    color: "#024EFC",
-    type: "E-Comm  Website",
-    text: "See On GitHub",
-    href: SITE_SLUGS.projectLinks.bespoke,
-    dataText: "See On GitHub",
-    ariaLabel: "See Bespoke Website Build Case Study",
-    isExternal: false,
-  },
-
-  {
-    id: "automedics",
-    src: automedicsPreview,
-    alt: "Chat App Preview",
-    color: "#000000",
-    type: "Chat App Preview",
-    text: "See on GitHub",
-    href: SITE_SLUGS.projectLinks.automedics,
-    dataText: "See On GitHub",
-    ariaLabel: "See Automedics Website Build Case Study",
-    isExternal: false,
-  },
-
-  {
-    id: "iron-oak",
-    src: iaoPreview,
-    alt: "Blog Preview",
-    color: "#13739C",
-    type: "Blog Website",
-    text: "Live Preview",
-    href: SITE_SLUGS.projectLinks.iao,
-    dataText: "Live Preview",
-    ariaLabel: "See Iron & Oak Website Build Case Study",
-    isExternal: false,
-  },
-  {
-    id: "entitled",
-    src: entitledPreview,
-    alt: "School Management",
-    color: "#DA961AA5",
-    type: "school Management Web App",
-    text: "View Website",
-    href: externalLinks.entitled,
-    dataText: "See On GitHub",
-    ariaLabel: "View Entitled Website",
-    isExternal: true,
-  },
-  {
     id: "codesync",
+    title: "CodeSync",
+    date: "Sep . 2025",
+    description: "A real-time collaborative code editor with instant room sharing, live cursor tracking, and multi-language syntax highlighting.",
+    tags: ["Next.js", "TypeScript", "Socket.io", "Monaco Editor", "Tailwind CSS"],
     src: codesyncPreview,
     alt: "CodeSync - Preview",
     color: "#2ecc71",
     type: "Collaborative Code Editor",
-    text: "Live Preview",
+    text: "Live link",
     href: SITE_SLUGS.projectLinks.codesync,
-    dataText: "Live Preview",
+    dataText: "Live link",
     ariaLabel: "View CodeSync Live",
     isExternal: true,
   },
   {
+    id: "emailbot",
+    title: "Emailbot",
+    date: "Sep . 2026",
+    description: "A email bot that redirect your importent email to your whatsapp ",
+    tags: ["Next.js", "TypeScript", "kafka", "Tailwind CSS", "Redis", "postgres", "gemini", "prisma", "Docker"],
+    src: codesyncPreview,
+    alt: "Emailbot - Preview",
+    color: "#2ecc71",
+    type: "Emailbot",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.emailbot,
+    dataText: "Live link",
+    ariaLabel: "View Emailbot Live",
+    isExternal: true,
+  },
+  {
+    id: "react-zero-ui",
+    title: "Movies Booking Web",
+    date: "Aug . 2025",
+    description: "A high-performance full-stack cinema ticket reservation and movie booking platform with real-time seat selection.",
+    tags: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Node.js"],
+    src: zeroPreview,
+    alt: "Movies Booking Web - Preview",
+    color: "#3B06D1",
+    type: "Movies Booking Web",
+    text: "Live link",
+    href: externalLinks.zeroCore,
+    dataText: "Live link",
+    ariaLabel: "View Movies Booking Web",
+    isExternal: true,
+  },
+  {
+    id: "contestplatform",
+    title: "ContestPlatform",
+    date: "Jul . 2025",
+    description: "Competitive programming and coding contest platform featuring automated test runners, leaderboards, and submission history.",
+    tags: ["React", "TypeScript", "Node.js", "Docker", "PostgreSQL", "Express"],
+    src: contestplatformPreview,
+    alt: "ContestPlatform - Preview",
+    color: "#3498db",
+    type: "Coding Contest Platform",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.contestplatform,
+    dataText: "Live link",
+    ariaLabel: "View ContestPlatform Live",
+    isExternal: true,
+  },
+  {
+    id: "filekeeper",
+    title: "FileKeeper",
+    date: "Jun . 2025",
+    description: "A secure cloud file storage and digital asset management system with sharing controls and fast preview rendering.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "AWS S3", "Tailwind CSS"],
+    src: filekeeperPreview,
+    alt: "FileKeeper - Preview",
+    color: "#9b59b6",
+    type: "File Management System",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.filekeeper,
+    dataText: "Live link",
+    ariaLabel: "View FileKeeper Live",
+    isExternal: true,
+  },
+  {
     id: "leetcodemate",
+    title: "LeetCodeMate",
+    date: "May . 2025",
+    description: "A developer tool and companion app designed to track LeetCode problem patterns, daily streaks, and contest performance.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "LeetCode API", "Vite"],
     src: leetcodematePreview,
     alt: "LeetCodeMate - Preview",
     color: "#f1c40f",
@@ -114,71 +129,163 @@ export const STATIC_PROJECTS: StaticProject[] = [
     isExternal: false,
   },
   {
-    id: "contestplatform",
-    src: contestplatformPreview,
-    alt: "ContestPlatform - Preview",
-    color: "#3498db",
-    type: "Coding Contest Platform",
-    text: "Live Preview",
-    href: SITE_SLUGS.projectLinks.contestplatform,
-    dataText: "Live Preview",
-    ariaLabel: "View ContestPlatform Live",
-    isExternal: true,
-  },
-  {
-    id: "filekeeper",
-    src: filekeeperPreview,
-    alt: "FileKeeper - Preview",
-    color: "#9b59b6",
-    type: "File Management System",
-    text: "Live Preview",
-    href: SITE_SLUGS.projectLinks.filekeeper,
-    dataText: "Live Preview",
-    ariaLabel: "View FileKeeper Live",
-    isExternal: true,
-  },
-  {
     id: "canavax",
+    title: "Canavax",
+    date: "Mar . 2025",
+    description: "An interactive HTML5 canvas digital whiteboard and drawing application with shapes, export tools, and undo/redo history.",
+    tags: ["React", "TypeScript", "HTML5 Canvas", "Tailwind CSS"],
     src: canavaxPreview,
     alt: "Canavax - Preview",
     color: "#e67e22",
     type: "Canvas Drawing Tool",
-    text: "Live Preview",
+    text: "Live link",
     href: SITE_SLUGS.projectLinks.canavax,
-    dataText: "Live Preview",
+    dataText: "Live link",
     ariaLabel: "View Canavax Live",
+    isExternal: true,
+  },
+  {
+    id: "bespoke",
+    title: "Bespoke",
+    date: "Dec . 2024",
+    description: "A modern e-commerce storefront build optimized for fast conversions, responsive micro-animations, and seamless checkout.",
+    tags: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS", "Framer Motion"],
+    src: bespokePreview,
+    alt: "E -Com Preview",
+    color: "#024EFC",
+    type: "E-Comm Website",
+    text: "See On GitHub",
+    href: SITE_SLUGS.projectLinks.bespoke,
+    dataText: "See On GitHub",
+    ariaLabel: "See Bespoke Website Build Case Study",
+    isExternal: false,
+  },
+  {
+    id: "automedics",
+    title: "Automedics",
+    date: "Oct . 2024",
+    description: "A real-time customer communication and chat platform with automated service dispatching and status tracking.",
+    tags: ["React", "Node.js", "Express", "Socket.io", "MongoDB"],
+    src: automedicsPreview,
+    alt: "Chat App Preview",
+    color: "#000000",
+    type: "Chat App Preview",
+    text: "See on GitHub",
+    href: SITE_SLUGS.projectLinks.automedics,
+    dataText: "See On GitHub",
+    ariaLabel: "See Automedics Website Build Case Study",
+    isExternal: false,
+  },
+  {
+    id: "iron-oak",
+    title: "Iron & Oak",
+    date: "Aug . 2024",
+    description: "A content-driven publication and editorial blog with MDX support, category filters, and reading time estimation.",
+    tags: ["Next.js", "TypeScript", "MDX", "Tailwind CSS"],
+    src: iaoPreview,
+    alt: "Blog Preview",
+    color: "#13739C",
+    type: "Blog Website",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.iao,
+    dataText: "Live link",
+    ariaLabel: "See Iron & Oak Website Build Case Study",
+    isExternal: false,
+  },
+  {
+    id: "entitled",
+    title: "Entitled",
+    date: "Jun . 2024",
+    description: "A school and institute management web portal for managing student records, attendance, grades, and faculty schedules.",
+    tags: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    src: entitledPreview,
+    alt: "School Management",
+    color: "#DA961AA5",
+    type: "School Management Web App",
+    text: "Live link",
+    href: externalLinks.entitled,
+    dataText: "Live link",
+    ariaLabel: "View Entitled Website",
     isExternal: true,
   },
 ]
 
 export const ProjectsStatic: React.FC = () => {
   return (
-    <section className="border-t border-slate-200">
-      <div className="inside-container-small">
-        <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
-          {STATIC_PROJECTS.map((project) => {
-            const ProjectWrapper = project.isExternal ? "a" : Link
-            const wrapperProps = project.isExternal
-              ? {
-                  href: project.href,
-                  target: "_blank",
-                  rel: "noopener",
-                  "data-text": project.dataText,
-                  "aria-label": project.ariaLabel,
-                }
-              : {
-                  href: project.href,
-                  "data-text": project.dataText,
-                  "aria-label": project.ariaLabel,
-                  prefetch: true,
-                }
+    <section className="border-t border-[var(--border)]">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 py-8 md:px-11 md:py-12">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {STATIC_PROJECTS.map((project) => (
+            <div
+              key={project.id}
+              className="group flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-4 md:p-5 transition-all duration-300 hover:border-[var(--border-hover)] hover:shadow-lg"
+            >
+              {/* Thumbnail Container */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-neutral-900/5 dark:bg-neutral-900">
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
 
-            return (
-              <ProjectWrapper key={project.id} {...wrapperProps}>
-                <Card src={project.src} alt={project.alt} color={project.color} type={project.type} reveal={false} text={project.text} />
-              </ProjectWrapper>
-            )
-          })}
+              {/* Content */}
+              <div className="mt-4 flex flex-1 flex-col justify-between gap-3">
+                <div>
+                  {/* Title & Date */}
+                  <div className="flex items-center justify-between gap-2">
+                    <h2 className="text-lg font-semibold tracking-tight text-[var(--text-primary)]">
+                      {project.title}
+                    </h2>
+                    <span className="font-mono text-xs text-[var(--text-muted)]">
+                      {project.date}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="mt-2 text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm line-clamp-3">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-md border border-[var(--pill-border)] bg-[var(--pill-bg)] px-2.5 py-0.5 text-[11px] font-medium text-[var(--pill-text)]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Live Link Button */}
+                <div className="mt-3 border-t border-[var(--border-subtle)] pt-3 text-center">
+                  <a
+                    href={project.href}
+                    target={project.isExternal ? "_blank" : undefined}
+                    rel={project.isExternal ? "noopener noreferrer" : undefined}
+                    aria-label={project.ariaLabel}
+                    className="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                  >
+                    <span>{project.text}</span>
+                    <svg
+                      className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

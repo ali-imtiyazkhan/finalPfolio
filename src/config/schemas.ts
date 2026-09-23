@@ -82,6 +82,20 @@ const projectsData: ProjectItem[] = [
     description: "Canvas-based drawing tool",
     isExternal: false,
   },
+  {
+    name: "emailbot",
+    url: SITE_SLUGS.projectLinks.emailbot,
+    date: "2025-02-15",
+    description: "Emailbot",
+    isExternal: false,
+  },
+  {
+    name: "Codesync",
+    url: SITE_SLUGS.projectLinks.codesync,
+    date: "2025-02-15",
+    description: "Real-time collaborative code editor",
+    isExternal: false,
+  },
 ]
 
 export const projectsSchema: WithContext<CollectionPage> = {

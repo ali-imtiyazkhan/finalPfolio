@@ -36,7 +36,7 @@ const PortfolioPage: React.FC = () => {
   return (
     <main className="overflow-hidden">
       <HeroV2 />
-      <div className="border-b border-gray-200" />
+      <div className="border-b border-[var(--border)]" />
       <ProjectsSection />
       <AboutSectionV2 />
       <ServicesSectionV2 />

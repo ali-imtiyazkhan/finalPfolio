@@ -8,8 +8,8 @@ type HeadingProps<T extends keyof JSX.IntrinsicElements> = React.ComponentPropsW
 
 export const H1: React.FC<HeadingProps<"h1">> = ({ children, variant = "large", ...rest }) => {
   const variants = {
-    large: "xs:text-5xl relative z-5 text-4xl leading-[1] font-medium tracking-tight text-slate-900 sm:text-6xl lg:text-7xl",
-    medium: "sm:text-3xl relative z-5 text-3xl leading-[1.1] font-normal tracking-tight text-slate-900 sm:text-4xl lg:text-5xl",
+    large: "xs:text-5xl relative z-5 text-4xl leading-[1] font-medium tracking-tight text-[var(--text-primary)] sm:text-6xl lg:text-7xl",
+    medium: "sm:text-3xl relative z-5 text-3xl leading-[1.1] font-normal tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl",
   }
 
   return (
@@ -21,7 +21,7 @@ export const H1: React.FC<HeadingProps<"h1">> = ({ children, variant = "large", 
 
 export const H2: React.FC<HeadingProps<"h2">> = ({ children, ...rest }) => {
   return (
-    <h2 {...rest} className={clsx("text-4xl tracking-tighter text-slate-900 md:text-5xl md:leading-11 lg:text-6xl lg:leading-15", rest.className)}>
+    <h2 {...rest} className={clsx("text-4xl tracking-tighter text-[var(--text-primary)] md:text-5xl md:leading-11 lg:text-6xl lg:leading-15", rest.className)}>
       {children}
     </h2>
   )
@@ -29,7 +29,7 @@ export const H2: React.FC<HeadingProps<"h2">> = ({ children, ...rest }) => {
 
 export const H3: React.FC<HeadingProps<"h3">> = ({ children, ...rest }) => {
   return (
-    <h3 {...rest} className={clsx("text-2xl leading-8 font-medium tracking-tight text-slate-800 md:text-3xl", rest.className)}>
+    <h3 {...rest} className={clsx("text-2xl leading-8 font-medium tracking-tight text-[var(--text-primary)] md:text-3xl", rest.className)}>
       {children}
     </h3>
   )
@@ -50,7 +50,7 @@ export function Text({ as: Component = "p", size = "base", className = "", ...pr
     xl: "text-xl leading-6 md:text-2xl",
   }
 
-  return <Component {...props} className={`${sizeClasses[size]} tracking-tight text-slate-600 ${className}`} />
+  return <Component {...props} className={`${sizeClasses[size]} tracking-tight text-[var(--text-secondary)] ${className}`} />
 }
 
 interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
@@ -67,5 +67,5 @@ export function Typography({ as: Component = "article", size = "base", ...props 
     lg: "text-lg leading-6 md:text-xl",
     xl: "text-xl leading-6 md:text-2xl",
   }
-  return <Component {...props} className={`text-slate-600 ${sizeClasses[size]} ${props.className}`} />
+  return <Component {...props} className={`text-[var(--text-secondary)] ${sizeClasses[size]} ${props.className}`} />
 }

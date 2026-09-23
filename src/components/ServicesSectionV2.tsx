@@ -148,13 +148,13 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
       <div className="flex h-full flex-col gap-12 max-md:w-full md:[flex:2_0_0px]">
         <AnimatedH2>
           Engineering <br />
-          <span className="text-slate-700">Toolkit</span>
+          <span className="text-[var(--text-muted)]">Toolkit</span>
         </AnimatedH2>
 
         <div className="w-full space-y-10">
           {techCategories.map((category) => (
             <div key={category.title} className="space-y-4">
-              <Text size="sm" className="font-semibold text-slate-400 uppercase tracking-widest block">
+              <Text size="sm" className="font-semibold text-[var(--text-muted)] uppercase tracking-widest block">
                 {category.title}
               </Text>
               
@@ -179,20 +179,20 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
                             ease: ["easeOut", "linear", "easeInOut"],
                           },
                         }}
-                        className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-gray-200 bg-white cursor-pointer"
+                        className="button-shadow flex h-13 w-13 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--bg-card)] text-[var(--text-primary)] hover:border-[var(--border-hover)] cursor-pointer transition-colors duration-200"
                       >
                         <Icon size={30} className="object-contain" />
                       </m.div>
 
                       {/* Tooltip */}
                       {tooltip && (
-                        <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 px-2.5 py-1 text-[10px] font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+                        <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[var(--text-primary)] px-2.5 py-1 text-[10px] font-medium text-[var(--bg)] opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
                           {tooltip}
-                          <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-2 rotate-45 bg-slate-900" />
+                          <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2 w-2 rotate-45 bg-[var(--text-primary)]" />
                         </span>
                       )}
 
-                      <span className="mt-2 text-[10px] text-center text-slate-600 font-medium truncate max-w-[80px]">{name}</span>
+                      <span className="mt-2 text-[10px] text-center text-[var(--text-secondary)] font-medium truncate max-w-[80px]">{name}</span>
                     </div>
                   </MotionLi>
                 ))}
@@ -216,7 +216,7 @@ export const ServicesSectionV2: React.FC<{ className?: string }> = ({
             variants={element2}
             className="flex items-center gap-3"
           >
-            <span className="button-shadow flex aspect-square h-10 w-10 items-center justify-center rounded-full bg-black text-white">
+            <span className="button-shadow flex aspect-square h-10 w-10 items-center justify-center rounded-full bg-[var(--text-primary)] text-[var(--bg)]">
               <Icon size={20} />
             </span>
             <Text as="span" size="sm">

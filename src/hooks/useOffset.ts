@@ -21,6 +21,7 @@ const initialOffsets: Record<string, Partial<HeroOffset>> = {
     y: -980.328125,
   },
 }
+
 export function useOffset(cardIds: string[]) {
   const offsetsRef = useRef(initialOffsets)
   const [, force] = useReducer((x) => x + 1, 0)
@@ -28,6 +29,7 @@ export function useOffset(cardIds: string[]) {
   useIsoMorphicEffect(() => {
     const calc = () => {
       const next: Record<string, Partial<HeroOffset>> = {}
+      let foundAny = false
       for (const id of cardIds) {
         const grid = document.querySelector(`[data-grid-id="${id}"]`)
         const hero = document.querySelector("[data-stack-target-id]")
@@ -35,18 +37,28 @@ export function useOffset(cardIds: string[]) {
         const g = grid.getBoundingClientRect()
         const h = hero.getBoundingClientRect()
         next[id] = { x: h.left - g.left, y: h.top - g.top }
+        foundAny = true
       }
-      offsetsRef.current = { ...initialOffsets, ...offsetsRef.current, ...next }
-
-      force() // tell React styles changed
+      if (foundAny) {
+        offsetsRef.current = { ...offsetsRef.current, ...next }
+        force()
+      }
     }
-    const debouncedCalc = debounce(calc, 50)
-    const ro = new ResizeObserver(debouncedCalc) // auto-recompute on resize
+
+    const debouncedCalc = debounce(calc, 60)
+    window.addEventListener("resize", debouncedCalc)
+    const ro = new ResizeObserver(debouncedCalc)
     ro.observe(document.documentElement)
 
+    // Run immediately and after layout settles
     calc()
+    const timer = setTimeout(calc, 150)
 
-    return () => ro.disconnect()
+    return () => {
+      window.removeEventListener("resize", debouncedCalc)
+      ro.disconnect()
+      clearTimeout(timer)
+    }
   }, [cardIds])
 
   return offsetsRef.current

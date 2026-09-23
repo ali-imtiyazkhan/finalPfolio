@@ -1,40 +1,42 @@
 "use client"
+
 import { AnimatedCard, HeroOffset } from "@/components/ProjectCard/AnimatedCard"
 import codesyncPreview from "@/../public/images/codesync-preview.webp"
-import leetcodematePreview from "@/../public/images/leetcodemate-preview.webp"
 import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
 import canavaxPreview from "@/../public/images/canavax-preview.webp"
+import emailbotPreview from "@/../public/images/emailbot-preview.webp"
 import clsx from "clsx"
 import { useOffset } from "@/hooks/useOffset"
 import { useIsMobile } from "@/hooks/useMediaQuery"
 import { useRef, useEffect } from "react"
-import { useScroll, useSpring } from "motion/react"
+import { useScroll, useSpring, useTransform } from "motion/react"
 import { useUI } from "@react-zero-ui/core"
 import { SITE_SLUGS } from "@/config/siteConfig"
 
-const ids = ["codesync", "leetcodemate", "filekeeper", "emailbot"]
+const ids = ["codesync", "emailbot", "filekeeper", "canavax"]
 
 export function ProjectsGrid({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const rawOffsets = useOffset(ids)
   const isMobile = useIsMobile()
-  const isSmallScreen = useIsMobile(576)
-  const responsiveScale = isMobile ? 0.34 : 0.8
+  const responsiveScale = isMobile ? 0.42 : 0.75
   const [, setReveal] = useUI<"true" | "false">("reveal", "false")
 
-  const { scrollYProgress } = useScroll({
-    offset: isMobile ? ["start start", "10% start"] : ["start start", "15% start"],
-  })
-  const stiffness = isMobile ? 120 : 220
-  const damping = isMobile ? 50 : 90
+  // Accurate scroll tracking: from top of page (0) to when projects section begins (~360px)
+  const { scrollY } = useScroll()
+  const scrollRange = isMobile ? [0, 240] : [0, 360]
+  const scrollProgress = useTransform(scrollY, scrollRange, [0, 1], { clamp: true })
 
-  const progress = useSpring(scrollYProgress, { stiffness, damping })
+  const stiffness = isMobile ? 140 : 180
+  const damping = isMobile ? 26 : 28
+
+  const progress = useSpring(scrollProgress, { stiffness, damping, restDelta: 0.001 })
 
   const OFFSET_TUNING: Record<string, Partial<HeroOffset>> = {
-    codesync: { rot: 9, s: responsiveScale, dx: isMobile ? -220 : -30, dy: isMobile ? -120 : -40 },
-    leetcodemate: { rot: -5, s: responsiveScale, dx: isMobile ? -230 : -60, dy: isMobile ? -130 : -40 },
-    filekeeper: { rot: 5, s: responsiveScale, dx: isMobile ? -225 : -45, dy: isMobile ? -130 : -25 },
-    canavax: { rot: 12, s: responsiveScale, dx: isMobile ? -230 : -50, dy: isMobile ? -110 : -10 },
+    codesync: { rot: 8, s: responsiveScale, dx: isMobile ? -140 : -20, dy: isMobile ? -70 : -30 },
+    emailbot: { rot: -6, s: responsiveScale, dx: isMobile ? -160 : -45, dy: isMobile ? -80 : -30 },
+    filekeeper: { rot: 4, s: responsiveScale, dx: isMobile ? -150 : -30, dy: isMobile ? -75 : -15 },
+    canavax: { rot: 10, s: responsiveScale, dx: isMobile ? -155 : -40, dy: isMobile ? -65 : -10 },
   }
 
   const offsets = Object.fromEntries(
@@ -53,7 +55,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
     })
   )
 
-  const triggerProgress = isMobile ? (isSmallScreen ? 0.15 : 0.2) : 0.5
+  const triggerProgress = 0.6
   useEffect(() => {
     const current = progress.get()
     if (current >= triggerProgress) {
@@ -64,7 +66,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
 
     const unsubscribe = progress.on("change", (latest) => {
       if (latest >= triggerProgress) {
-        setReveal("true") 
+        setReveal("true")
       } else {
         setReveal("false")
       }
@@ -72,6 +74,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
 
     return unsubscribe
   }, [progress, setReveal, triggerProgress])
+
   return (
     <section id="projects-grid" className={clsx("relative scroll-mt-36", className)} ref={ref}>
       <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
@@ -88,16 +91,16 @@ export function ProjectsGrid({ className }: { className?: string }) {
           dataText="Live Preview"
         />
         <AnimatedCard
-          key="LeetCodeMate"
-          src={leetcodematePreview}
-          alt="LeetCodeMate - LeetCode Assistant"
-          offset={offsets["leetcodemate"]}
-          gridId="leetcodemate"
+          key="emailbot"
+          src={emailbotPreview}
+          alt="emailbot - AI Email Assistant"
+          offset={offsets["emailbot"]}
+          gridId="emailbot"
           color="#f1c40f"
-          type="LeetCode Assistant"
+          type="AI Email Assistant"
           progress={progress}
-          href={SITE_SLUGS.projectLinks.leetcodemate}
-          dataText="View On GitHub"
+          href={SITE_SLUGS.projectLinks.emailbot}
+          dataText="Live Preview"
         />
         <AnimatedCard
           key="FileKeeper"

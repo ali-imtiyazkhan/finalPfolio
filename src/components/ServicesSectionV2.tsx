@@ -43,7 +43,6 @@ import {
   MdOutlinePalette, 
   MdRateReview 
 } from "react-icons/md";
-import { TbRegex } from "react-icons/tb";
 
 import { m } from "framer-motion";
 
@@ -94,7 +93,6 @@ const techCategories = [
       { name: "Postman", Icon: SiPostman, tooltip: "API testing" },
       { name: "GitHub", Icon: FaGithub, tooltip: "Version control" },
       { name: "Open Source", Icon: FaGithub, tooltip: "Active contributor" },
-      { name: "Regex", Icon: TbRegex, tooltip: "Pattern matching" },
     ],
   },
 ];

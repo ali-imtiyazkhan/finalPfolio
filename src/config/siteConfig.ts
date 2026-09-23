@@ -51,7 +51,9 @@ export const SITE_SLUGS = {
     contestplatform: "https://100xcontest.vercel.app/",
     filekeeper: "https://notes-keeper-web.vercel.app/",
     canavax: "https://excalidraw-2-one.vercel.app/",
-    emailbot: "https://emailbot-web.vercel.app/"
+    emailbot: "https://emailbot-web.vercel.app/",
+    repoInfo: "https://chat-with-git-repo.vercel.app/",
+    bharatlens: "https://bharatlens-web.vercel.app/",
   },
 } as const
 
@@ -60,6 +62,7 @@ export const externalLinks = {
   zeroIconSprite: "https://github.com/ali-imtiyazkhan",
   zeroCore: "https://movies-booking-web.vercel.app/",
   entitled: "https://github.com/ali-imtiyazkhan",
+  flowsilk: "https://github.com/ali-imtiyazkhan/trello-clone",
 } as const
 
 const flattenSlugs = (obj: Record<string, string | Record<string, string>>): string[] => {

@@ -9,8 +9,11 @@ import entitledPreview from "@/../public/images/entitled-preview-v2.webp"
 import zeroPreview from "@/../public/images/react-zero-ui-preview.jpg"
 import codesyncPreview from "@/../public/images/codesync-preview.webp"
 import emailbotPreview from "@/../public/images/emailbot-preview.webp"
+import flowsilkPreview from "@/../public/images/flowsilk.webp"
+import bhartlensPreview from "@/../public/images/Bharatlens.webp"
+import repoInfoPreview from "@/../public/images/repoinfo.webp"
 import leetcodematePreview from "@/../public/images/leetcodemate-preview.webp"
-import contestplatformPreview from "@/../public/images/contestplatform-preview.webp"
+import contestplatformPreview from "@/../public/images/contestPlatform.webp"
 import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
 import canavaxPreview from "@/../public/images/canavax-preview.webp"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
@@ -66,7 +69,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     isExternal: true,
   },
   {
-    id: "react-zero-ui",
+    id: "movie booking",
     title: "Movies Booking Web",
     date: "Aug . 2025",
     description: "A high-performance full-stack cinema ticket reservation and movie booking platform with real-time seat selection.",
@@ -95,6 +98,22 @@ export const STATIC_PROJECTS: StaticProject[] = [
     href: SITE_SLUGS.projectLinks.contestplatform,
     dataText: "Live link",
     ariaLabel: "View ContestPlatform Live",
+    isExternal: true,
+  },
+  {
+    id: "Bhartlens",
+    title: "BhartLens",
+    date: "Jul . 2025",
+    description: "BhartLens is a website that helps people find the best places to visit in India. It provides information about the best places to visit in India, as well as the best time to visit them.",
+    tags: ["React", "TypeScript", "Node.js", "Docker", "PostgreSQL", "Express"],
+    src: bhartlensPreview,
+    alt: "BhartLens - Preview",
+    color: "#3498db",
+    type: "Tourism Platform",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.bharatlens,
+    dataText: "Live link",
+    ariaLabel: "View BhartLens Live",
     isExternal: true,
   },
   {
@@ -146,7 +165,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     isExternal: true,
   },
   {
-    id: "bespoke",
+    id: "shopping web",
     title: "Shopping Website",
     date: "Dec . 2024",
     description: "A modern e-commerce storefront build optimized for fast conversions, responsive micro-animations, and seamless checkout.",
@@ -163,9 +182,9 @@ export const STATIC_PROJECTS: StaticProject[] = [
   },
   {
     id: "automedics",
-    title: "Automedics",
+    title: "Chat App Preview",
     date: "Oct . 2024",
-    description: "A real-time customer communication and chat platform with automated service dispatching and status tracking.",
+    description: "A simple chat application with real-time messaging and user authentication.",
     tags: ["React", "Node.js", "Express", "Socket.io", "MongoDB"],
     src: automedicsPreview,
     alt: "Chat App Preview",
@@ -175,22 +194,6 @@ export const STATIC_PROJECTS: StaticProject[] = [
     href: SITE_SLUGS.projectLinks.automedics,
     dataText: "See On GitHub",
     ariaLabel: "See Automedics Website Build Case Study",
-    isExternal: false,
-  },
-  {
-    id: "iron-oak",
-    title: "Iron & Oak",
-    date: "Aug . 2024",
-    description: "A content-driven publication and editorial blog with MDX support, category filters, and reading time estimation.",
-    tags: ["Next.js", "TypeScript", "MDX", "Tailwind CSS"],
-    src: iaoPreview,
-    alt: "Blog Preview",
-    color: "#13739C",
-    type: "Blog Website",
-    text: "Live link",
-    href: SITE_SLUGS.projectLinks.iao,
-    dataText: "Live link",
-    ariaLabel: "See Iron & Oak Website Build Case Study",
     isExternal: false,
   },
   {
@@ -208,6 +211,38 @@ export const STATIC_PROJECTS: StaticProject[] = [
     dataText: "Live link",
     ariaLabel: "View Entitled Website",
     isExternal: true,
+  },
+  {
+    id: "flowsilk",
+    title: "flow-silk",
+    date: "Jun . 2026",
+    description: "Skilled based tasked distribution system using AI",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "github", "resume-parser", "llm"],
+    src: flowsilkPreview,
+    alt: "flow-silk",
+    color: "#DA961AA5",
+    type: "Skilled based tasked distribution system",
+    text: "See on Github",
+    href: externalLinks.flowsilk,
+    dataText: "See on Github",
+    ariaLabel: "View flow-silk",
+    isExternal: false,
+  },
+  {
+    id: "repoinfo",
+    title: "Repo Info",
+    date: "Jun . 2026",
+    description: "chat with any git repo and find out project info ",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "github", "resume-parser", "llm"],
+    src: repoInfoPreview,
+    alt: "repoInfo",
+    color: "#DA961AA5",
+    type: "Skilled based tasked distribution system",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.repoInfo,
+    dataText: "Live link",
+    ariaLabel: "View repoInfo",
+    isExternal: false,
   },
 ]
 

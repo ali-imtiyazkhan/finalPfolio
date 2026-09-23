@@ -5,9 +5,9 @@ import { MotionDiv } from "@/lib/lazy-ui"
 import { Text } from "@/components/ui/Elements"
 
 const LEETCODE_STATS = {
-  total: 439,
+  total: 550,
   totalProblems: 3892,
-  easy: { solved: 161, total: 935, color: "#22c55e", label: "Easy" },
+  easy: { solved: 161, total: 935, color: "#0e323b", label: "Easy" },
   medium: { solved: 235, total: 2036, color: "#f59e0b", label: "Medium" },
   hard: { solved: 43, total: 921, color: "#ef4444", label: "Hard" },
   contestRating: 1473,

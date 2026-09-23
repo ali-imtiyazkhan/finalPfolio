@@ -147,7 +147,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
   },
   {
     id: "bespoke",
-    title: "Bespoke",
+    title: "Shopping Website",
     date: "Dec . 2024",
     description: "A modern e-commerce storefront build optimized for fast conversions, responsive micro-animations, and seamless checkout.",
     tags: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS", "Framer Motion"],

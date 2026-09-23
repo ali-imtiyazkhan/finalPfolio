@@ -89,13 +89,6 @@ const projectsData: ProjectItem[] = [
     description: "Emailbot",
     isExternal: false,
   },
-  {
-    name: "Codesync",
-    url: SITE_SLUGS.projectLinks.codesync,
-    date: "2025-02-15",
-    description: "Real-time collaborative code editor",
-    isExternal: false,
-  },
 ]
 
 export const projectsSchema: WithContext<CollectionPage> = {

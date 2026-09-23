@@ -8,6 +8,7 @@ import automedicsPreview from "@/../public/images/automedics-preview-v2.webp"
 import entitledPreview from "@/../public/images/entitled-preview-v2.webp"
 import zeroPreview from "@/../public/images/react-zero-ui-preview.jpg"
 import codesyncPreview from "@/../public/images/codesync-preview.webp"
+import emailbotPreview from "@/../public/images/emailbot-preview.webp"
 import leetcodematePreview from "@/../public/images/leetcodemate-preview.webp"
 import contestplatformPreview from "@/../public/images/contestplatform-preview.webp"
 import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
@@ -54,7 +55,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     date: "Sep . 2026",
     description: "A email bot that redirect your importent email to your whatsapp ",
     tags: ["Next.js", "TypeScript", "kafka", "Tailwind CSS", "Redis", "postgres", "gemini", "prisma", "Docker"],
-    src: codesyncPreview,
+    src: emailbotPreview,
     alt: "Emailbot - Preview",
     color: "#2ecc71",
     type: "Emailbot",
@@ -194,7 +195,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
   },
   {
     id: "entitled",
-    title: "Entitled",
+    title: "School-management",
     date: "Jun . 2024",
     description: "A school and institute management web portal for managing student records, attendance, grades, and faculty schedules.",
     tags: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],

@@ -41,7 +41,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     title: "CodeSync",
     date: "Sep . 2025",
     description: "A real-time collaborative code editor with instant room sharing, live cursor tracking, and multi-language syntax highlighting.",
-    tags: ["Next.js", "TypeScript", "Socket.io", "Monaco Editor", "Tailwind CSS"],
+    tags: ["Next.js", "TypeScript", "Socket.io", "Monaco Editor", "Tailwind CSS", "WebRTC", "Nodejs", "docker", "excalidrew", "express", "Redis", "postgres", "prisma ORM"],
     src: codesyncPreview,
     alt: "CodeSync - Preview",
     color: "#2ecc71",

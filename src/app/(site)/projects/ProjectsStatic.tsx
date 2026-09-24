@@ -2,7 +2,6 @@
 
 import React from "react"
 import Image, { StaticImageData } from "next/image"
-import iaoPreview from "@/../public/images/iao-preview-v2.webp"
 import bespokePreview from "@/../public/images/bespoke-preview-v2.webp"
 import automedicsPreview from "@/../public/images/automedics-preview-v2.webp"
 import entitledPreview from "@/../public/images/entitled-preview-v2.webp"
@@ -16,6 +15,7 @@ import leetcodematePreview from "@/../public/images/leetcodemate-preview.webp"
 import contestplatformPreview from "@/../public/images/contestPlatform.webp"
 import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
 import canavaxPreview from "@/../public/images/canavax-preview.webp"
+import skillScribePreview from "@/../public/images/skillscribe.webp"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
 export type StaticProject = {
@@ -197,7 +197,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     isExternal: false,
   },
   {
-    id: "entitled",
+    id: "school-management",
     title: "School-management",
     date: "Jun . 2024",
     description: "A school and institute management web portal for managing student records, attendance, grades, and faculty schedules.",
@@ -242,6 +242,22 @@ export const STATIC_PROJECTS: StaticProject[] = [
     href: SITE_SLUGS.projectLinks.repoInfo,
     dataText: "Live link",
     ariaLabel: "View repoInfo",
+    isExternal: false,
+  },
+  {
+    id: "skillScribe",
+    title: "skillScribe",
+    date: "Jun . 2026",
+    description: "AI intervew practice platform",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "github", "resume-parser", "llm"],
+    src: skillScribePreview,
+    alt: "skillScribe",
+    color: "#DA961AA5",
+    type: "AI intervew practice platform",
+    text: "See on Github",
+    href: externalLinks.skillScreab,
+    dataText: "See on Github",
+    ariaLabel: "View skillScribe",
     isExternal: false,
   },
 ]

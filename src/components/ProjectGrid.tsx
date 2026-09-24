@@ -2,8 +2,8 @@
 
 import { AnimatedCard, HeroOffset } from "@/components/ProjectCard/AnimatedCard"
 import codesyncPreview from "@/../public/images/codesync-preview.webp"
-import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
-import canavaxPreview from "@/../public/images/canavax-preview.webp"
+import skillScribePreview from "@/../public/images/skillscribe.webp"
+import flowsilkPreview from "@/../public/images/flowsilk.webp"
 import emailbotPreview from "@/../public/images/emailbot-preview.webp"
 import clsx from "clsx"
 import { useOffset } from "@/hooks/useOffset"
@@ -11,9 +11,9 @@ import { useIsMobile } from "@/hooks/useMediaQuery"
 import { useRef, useEffect } from "react"
 import { useScroll, useSpring, useTransform } from "motion/react"
 import { useUI } from "@react-zero-ui/core"
-import { SITE_SLUGS } from "@/config/siteConfig"
+import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
-const ids = ["codesync", "emailbot", "filekeeper", "canavax"]
+const ids = ["codesync", "flowsilk", "emailbot", "skillScribe"]
 
 export function ProjectsGrid({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -35,8 +35,8 @@ export function ProjectsGrid({ className }: { className?: string }) {
   const OFFSET_TUNING: Record<string, Partial<HeroOffset>> = {
     codesync: { rot: 8, s: responsiveScale, dx: isMobile ? -140 : -20, dy: isMobile ? -70 : -30 },
     emailbot: { rot: -6, s: responsiveScale, dx: isMobile ? -160 : -45, dy: isMobile ? -80 : -30 },
-    filekeeper: { rot: 4, s: responsiveScale, dx: isMobile ? -150 : -30, dy: isMobile ? -75 : -15 },
-    canavax: { rot: 10, s: responsiveScale, dx: isMobile ? -155 : -40, dy: isMobile ? -65 : -10 },
+    skillScribe: { rot: 4, s: responsiveScale, dx: isMobile ? -150 : -30, dy: isMobile ? -75 : -15 },
+    flowsilk: { rot: 10, s: responsiveScale, dx: isMobile ? -155 : -40, dy: isMobile ? -65 : -10 },
   }
 
   const offsets = Object.fromEntries(
@@ -103,28 +103,28 @@ export function ProjectsGrid({ className }: { className?: string }) {
           dataText="Live Preview"
         />
         <AnimatedCard
-          key="FileKeeper"
-          src={filekeeperPreview}
-          alt="FileKeeper - File Management System"
-          offset={offsets["filekeeper"]}
-          gridId="filekeeper"
+          key="skillScribe"
+          src={skillScribePreview}
+          alt="skill-Scribe - Ai powered interview platform"
+          offset={offsets["skillScribe"]}
+          gridId="skillScribe"
           color="#9b59b6"
-          type="File Management System"
+          type="Intreview Platform"
           progress={progress}
-          href={SITE_SLUGS.projectLinks.filekeeper}
-          dataText="Live Preview"
+          href={externalLinks.skillScreab}
+          dataText="View On Github"
         />
         <AnimatedCard
-          key="Canavax"
-          src={canavaxPreview}
-          alt="Canavax - Canvas Drawing Tool"
+          key="flowsilk"
+          src={flowsilkPreview}
+          alt="flowsilk - Skilled based tasked distribution system"
           offset={offsets["canavax"]}
           gridId="canavax"
           color="#e67e22"
-          type="Canvas Drawing Tool"
+          type="Skilled based tasked distribution system"
           progress={progress}
-          href={SITE_SLUGS.projectLinks.canavax}
-          dataText="Live Preview"
+          href={externalLinks.flowsilk}
+          dataText="View On Github"
         />
       </div>
     </section>

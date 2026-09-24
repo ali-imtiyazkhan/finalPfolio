@@ -22,13 +22,9 @@ export const SITE_NAP = {
   state: "Rajasthan",
   zipCode: "301405",
   openingHours: [{ days: "Mon - Sat", hours: "8am - 6pm" }] as const,
-  googleReviewLink: "https://g.page/r/CXHVs1ony_76EAI/review",
   profiles: {
     facebook: "https://www.facebook.com/",
     linkedIn: "https://www.linkedin.com/in/imtiyaz-khan-92b917334",
-    yelp: "https://www.yelp.com/biz/serbyte-development-kirkland-3",
-    pinterest: "https://www.pinterest.com/serbytedevelopment",
-    gbp: "https://g.co/kgs/ay2r1wp",
     github: "https://github.com/ali-imtiyazkhan",
     x: "https://x.com/itzkhantijara",
   } as const,

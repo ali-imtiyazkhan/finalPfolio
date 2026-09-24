@@ -118,8 +118,8 @@ export function ProjectsGrid({ className }: { className?: string }) {
           key="flowsilk"
           src={flowsilkPreview}
           alt="flowsilk - Skilled based tasked distribution system"
-          offset={offsets["canavax"]}
-          gridId="canavax"
+          offset={offsets["flowsilk"]}
+          gridId="flowsilk"
           color="#e67e22"
           type="Skilled based tasked distribution system"
           progress={progress}

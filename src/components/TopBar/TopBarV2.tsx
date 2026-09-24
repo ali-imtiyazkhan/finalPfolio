@@ -44,7 +44,7 @@ export const TopBarV2: React.FC = () => {
               </li>
               <li className="flex">
                 <a
-                  href="/Imtiyaz_Resume_Black_Headings.pdf"
+                  href="/Imtiyaz_Khan_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bubble-hover hidden rounded-full border border-[var(--border)] bg-[var(--text-primary)] px-3 py-1 font-medium text-[var(--bg)] shadow-sm duration-300 hover:translate-y-0.5 hover:opacity-90 hover:shadow-none md:inline-block"

@@ -24,7 +24,7 @@ export const SITE_NAP = {
   openingHours: [{ days: "Mon - Sat", hours: "8am - 6pm" }] as const,
   profiles: {
     facebook: "https://www.facebook.com/",
-    linkedIn: "https://www.linkedin.com/in/imtiyaz-khan-92b917334",
+    linkedIn: "https://www.linkedin.com/in/imtiyaz-a-khan-92b917334",
     github: "https://github.com/ali-imtiyazkhan",
     x: "https://x.com/itzkhantijara",
   } as const,

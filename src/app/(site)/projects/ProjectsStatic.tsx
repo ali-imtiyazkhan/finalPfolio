@@ -16,6 +16,8 @@ import contestplatformPreview from "@/../public/images/contestPlatform.webp"
 import filekeeperPreview from "@/../public/images/filekeeper-preview.webp"
 import canavaxPreview from "@/../public/images/canavax-preview.webp"
 import skillScribePreview from "@/../public/images/skillscribe.webp"
+import jwdInterprisePreview from "@/../public/images/jwd-preew.webp"
+import fairDealPreview from "@/../public/images/fairdeal.webp"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
 export type StaticProject = {
@@ -33,6 +35,7 @@ export type StaticProject = {
   dataText: string
   ariaLabel: string
   isExternal: boolean
+  freelance?: boolean
 }
 
 export const STATIC_PROJECTS: StaticProject[] = [
@@ -260,6 +263,43 @@ export const STATIC_PROJECTS: StaticProject[] = [
     ariaLabel: "View skillScribe",
     isExternal: false,
   },
+  {
+    id: "fair deal gurugram web",
+    title: "Fair Deal Gurugram Web",
+    date: "June . 2025",
+    description:
+      "Freelance client build — a fair deal gurugram web is a platform that helps you to manage your fair deal gurugram this is a property listing web site with filter and sort options",
+    tags: ["Freelance", "Next.js", "React", "TypeScript", "Tailwind CSS"],
+    src: fairDealPreview,
+    alt: "fair deal gurugram web preview",
+    color: "#22d3ee",
+    type: "Freelance · Property Listing Web Site with filter and sort options",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.fairDeal,
+    dataText: "Live link",
+    ariaLabel: "View fair deal gurugram web Live",
+    isExternal: false,
+    freelance: true,
+  },
+  {
+    id: "jwd-interprise",
+    title: "JWD Interprise",
+    date: "Jun . 2026",
+    description:
+      "Freelance client build — a clothing catalog for JWD Interprise with collection browsing, filters, and sort. Designed for customers to find products fast, not a generic template.",
+    tags: ["Freelance", "Next.js", "React", "TypeScript", "Tailwind CSS"],
+    src: jwdInterprisePreview,
+    alt: "JWD Interprise clothing catalog preview",
+    color: "#22d3ee",
+    type: "Freelance · Clothing Catalog",
+    text: "Live link",
+    href: SITE_SLUGS.projectLinks.jwdInterprise,
+    dataText: "Live link",
+    ariaLabel: "View JWD Interprise Live",
+    isExternal: true,
+    freelance: true,
+  },
+
 ]
 
 export const ProjectsStatic: React.FC = () => {
@@ -288,9 +328,16 @@ export const ProjectsStatic: React.FC = () => {
                 <div>
                   {/* Title & Date */}
                   <div className="flex items-center justify-between gap-2">
-                    <h2 className="text-lg font-semibold tracking-tight text-[var(--text-primary)]">
-                      {project.title}
-                    </h2>
+                    <div className="flex min-w-0 items-center gap-2">
+                      <h2 className="truncate text-lg font-semibold tracking-tight text-[var(--text-primary)]">
+                        {project.title}
+                      </h2>
+                      {project.freelance && (
+                        <span className="shrink-0 rounded-full bg-cyan-500/15 px-2 py-0.5 text-[10px] font-semibold tracking-wider text-cyan-500 uppercase ring-1 ring-cyan-500/30">
+                          Freelance
+                        </span>
+                      )}
+                    </div>
                     <span className="font-mono text-xs text-[var(--text-muted)]">
                       {project.date}
                     </span>

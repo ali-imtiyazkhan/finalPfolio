@@ -515,3 +515,65 @@ body {
     transform: translateX(0);
   }
 }
+
+.journey-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: journey-drift 18s ease-in-out infinite;
+}
+
+.journey-orb-a {
+  top: 8%;
+  left: -6%;
+  height: 22rem;
+  width: 22rem;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.45), transparent 70%);
+}
+
+.journey-orb-b {
+  top: 42%;
+  right: -8%;
+  height: 24rem;
+  width: 24rem;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.4), transparent 70%);
+  animation-delay: -6s;
+}
+
+.journey-orb-c {
+  bottom: 4%;
+  left: 28%;
+  height: 18rem;
+  width: 18rem;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.28), transparent 70%);
+  animation-delay: -11s;
+}
+
+[data-theme="dark"] .journey-orb {
+  opacity: 0.5;
+}
+
+.journey-node {
+  animation: journey-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes journey-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.08);
+  }
+}
+
+@keyframes journey-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}

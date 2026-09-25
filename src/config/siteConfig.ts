@@ -49,7 +49,10 @@ export const SITE_SLUGS = {
     canavax: "https://excalidraw-2-one.vercel.app/",
     emailbot: "https://emailbot-web.vercel.app/",
     repoInfo: "https://chat-with-git-repo.vercel.app/",
-    bharatlens: "https://bharatlens-web.vercel.app/"
+    bharatlens: "https://bharatlens-web.vercel.app/",
+    jwdInterprise: "https://jmd-enterprises.vercel.app/",
+    fairDeal: "https://www.fairdealgurugram.com/"
+  
   },
 } as const
 
@@ -59,8 +62,7 @@ export const externalLinks = {
   zeroCore: "https://movies-booking-web.vercel.app/",
   entitled: "https://github.com/ali-imtiyazkhan",
   flowsilk: "https://github.com/ali-imtiyazkhan/trello-clone",
-  skillScreab : "https://github.com/ali-imtiyazkhan/ai_interview"
-} as const
+  skillScreab : "https://github.com/ali-imtiyazkhan/ai_interview"} as const
 
 const flattenSlugs = (obj: Record<string, string | Record<string, string>>): string[] => {
   return Object.values(obj).flatMap((value) => (typeof value === "string" ? [value] : flattenSlugs(value)))
